@@ -24,32 +24,33 @@ const Navbar = () => {
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const pathname = usePathname() || "/";
-  //todo : fix mounting issue
   useEffect(() => {
     setMounted(true);
   }, []);
 
   return (
-    <header className="w-full">
-      <div className="flex justify-between items-center">
-        {mounted && theme === "dark" && (
-          <Image
-            src="/nilaacodes-light.png"
-            width={48}
-            height={48}
-            alt="Nilaacodes"
-          />
-        )}
-        {mounted && theme !== "dark" && (
-          <Image
-            src="/nilaacodes-dark.png"
-            width={48}
-            height={48}
-            alt="Nilaacodes"
-          />
-        )}
+    <header className="w-full mb-2">
+      <div className="flex justify-between items-end mb-4">
+        <div className="h-12 w-12 p-1 border-2 justify-center bg-black dark:bg-white flex items-center dark:border-white border-black rounded-md">
+          {mounted &&
+            (theme === "dark" ? (
+              <Image
+                src="/nilaacodes-dark.png"
+                width={48}
+                height={48}
+                alt="Nilaacodes"
+              />
+            ) : (
+              <Image
+                src="/nilaacodes-light.png"
+                width={48}
+                height={48}
+                alt="Nilaacodes"
+              />
+            ))}
+        </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center justify-between gap-2">
           <a
             href="https://x.com/nilaacodes"
             target="_blank"
