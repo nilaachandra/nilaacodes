@@ -31,13 +31,13 @@ const Navbar = () => {
   return (
     <header className="w-full mb-2">
       <div className="flex justify-between items-end mb-4">
-        <div className="h-12 w-12 p-1 border-2 justify-center bg-black dark:bg-white flex items-center dark:border-white border-black rounded-md">
+        <div className="h-10 w-10 p-0.5 border-2 justify-center bg-black dark:bg-white flex items-center dark:border-white border-black rounded-md">
           {mounted &&
             (theme === "dark" ? (
               <Image
                 src="/nilaacodes-dark.png"
-                width={48}
-                height={48}
+                width={40}
+                height={40}
                 alt="Nilaacodes"
               />
             ) : (
