@@ -24,7 +24,7 @@ const Navbar = () => {
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const pathname = usePathname() || "/";
-
+  //todo : fix mounting issue
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -62,7 +62,13 @@ const Navbar = () => {
       </div>
       <div className="link-container w-full flex justify-between">
         {Object.entries(navLinks).map(([path, { linkName }]) => (
-          <Link key={path} href={path} className={pathname === path ? "underline font-semibold" : "text-zinc-500"}>
+          <Link
+            key={path}
+            href={path}
+            className={
+              pathname === path ? "underline font-semibold" : "text-zinc-500"
+            }
+          >
             {linkName}
           </Link>
         ))}
