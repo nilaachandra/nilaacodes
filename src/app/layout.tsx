@@ -3,7 +3,7 @@ import { Bricolage_Grotesque, Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./provider";
 import Navbar from "@/components/navbar";
-
+import { Analytics } from "@vercel/analytics/react"
 const bricolageRegular = Bricolage_Grotesque({
   subsets: ["latin"],
   weight: ["500", "800"],
@@ -29,18 +29,9 @@ export default function RootLayout({
       <body className="w-full lg:px-[64vh] px-4 py-4 min-h-screen">
         <Providers>
           <Navbar />
-          {/* <p className="font-bricolageRegular">Please stay tuned, your boy is building this site🙂.</p>
-          <p>
-            Meanwhile you can follow me on{" "}
-            <a
-              href="https://x.com/nilaacodes"
-              className="text-blue-700 underline"
-            >
-              Twitter🐦
-            </a>
-          </p> */}
           <main>{children}</main>
         </Providers>
+        <Analytics/>
       </body>
     </html>
   );
