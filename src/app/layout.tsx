@@ -24,6 +24,8 @@ export default function RootLayout({
       <body className="w-full lg:px-[64vh] px-4 py-4 min-h-screen">
         <Providers>
           <Navbar />
+<h1>Please stay tuned, your boy is building this site🙂.</h1>
+<p>Meanwhile you can follow me on <a href='https://x.com/nilaacodes' className="text-blue-700 underline">Twitter🐦</a></p>
           <main>{children}</main>
         </Providers>
       </body>
