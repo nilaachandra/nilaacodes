@@ -4,6 +4,7 @@ import "./globals.css";
 import { Providers } from "./provider";
 import Navbar from "@/components/navbar";
 import { Analytics } from "@vercel/analytics/react"
+import Footer from "@/components/Footer";
 const bricolageRegular = Bricolage_Grotesque({
   subsets: ["latin"],
   weight: ["500", "800"],
@@ -30,6 +31,7 @@ export default function RootLayout({
         <Providers>
           <Navbar />
           <main>{children}</main>
+          <Footer/>
         </Providers>
         <Analytics/>
       </body>
