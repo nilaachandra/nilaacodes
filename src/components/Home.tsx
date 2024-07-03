@@ -21,11 +21,11 @@ const Homepage = () => {
           className="hello grid grid-cols-3  gap-3 items-center"
         >
           <div className="desc w-full col-span-2">
-            <h1 className="font-bold lg:text-3xl text-lg">
-              Hello, I&apos;m <span className="text-blue-700">Nilaa</span>{" "}
+            <h1 className="font-bold lg:text-3xl text-xl">
+              Hey, I&apos;m <span className="text-blue-700">Nilaa</span>{" "}
               Laishram 👋
             </h1>
-            <p className="lg:text-lg text-base tracking-tight leading-5">
+            <p className="text-base tracking-tight leading-5">
               - Full Stack Developer, Freelancer and UI designer🚀 who loves to
               build and ship things.
             </p>
@@ -40,8 +40,8 @@ const Homepage = () => {
             />
           </div>
         </MotionHeader>
-        <MotionDiv variants={childVariants}>
-          <p className="lg:text-lg text-base leading-5 tracking-tight">
+        <MotionDiv variants={childVariants} className="mt-3">
+          <p className="text-base leading-5 tracking-tight">
             Once a{" "}
             <span className="italic font-semibold dark:text-blue-600">
               Geology
@@ -92,7 +92,7 @@ const Homepage = () => {
           <MyWritings />
         </MotionDiv>
         <Wigglyline />
-        <h1>
+        <h1 className="leading-5">
           That&apos;s all for now, folks. The site is still under
           construction, because perfection takes time. For any burning
           questions, brilliant feedback, or life-changing suggestions, feel free
@@ -115,6 +115,7 @@ const Homepage = () => {
           . Thanks for stopping by 🤠!
         </h1>
       </section>
+      <Wigglyline/>
     </MotionDiv>
   );
 };
