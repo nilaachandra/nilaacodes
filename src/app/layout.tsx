@@ -26,7 +26,7 @@ export default function RootLayout({
       className={`${bricolageRegular.className}`}
       suppressHydrationWarning
     >
-      <body className="w-full lg:px-[64vh] px-4  py-4 min-h-screen">
+      <body className="w-full lg:px-[64vh] px-4 py-4 min-h-screen">
         <Providers>
           <Navbar />
           <main>{children}</main>
