@@ -13,7 +13,7 @@ const Homepage = () => {
           <h1 className="font-bold lg:text-3xl text-lg">
             Hello, I&apos;m <span className="text-blue-700">Nilaa</span> Laishram 👋
           </h1>
-          <p className="lg:text-base text-sm tracking-tight leading-5">
+          <p className="lg:text-lg text-base tracking-tight leading-5">
             - Full Stack Developer, Freelancer and UI designer🚀 who loves to
             build and ship things.
           </p>
@@ -31,22 +31,22 @@ const Homepage = () => {
       </div>
 
       <div className="mt-3">
-        <p className="lg:text-base text-sm leading-5 tracking-tight">
+        <p className="lg:text-lg text-base leading-none tracking-tight">
           Once a{" "}
-          <span className="italic font-semibold dark:text-zinc-300">
+          <span className="italic font-semibold dark:text-blue-600">
             Geology
           </span>{" "}
           buff, now I dive into{" "}
-          <span className="italic font-semibold dark:text-zinc-300">code</span>{" "}
+          <span className="italic font-semibold dark:text-blue-600">code</span>{" "}
           instead of{" "}
-          <span className="italic font-semibold dark:text-zinc-300">rocks</span>
+          <span className="italic font-semibold dark:text-blue-600">rocks</span>
           . I traded fossils for frameworks and never looked back. I&apos;m
           passionate about learning, especially{" "}
-          <span className="italic font-semibold dark:text-zinc-300">
+          <span className="italic font-semibold dark:text-blue-600">
             Next.js
           </span>
           , and love{" "}
-          <span className="italic font-semibold dark:text-zinc-300">
+          <span className="italic font-semibold dark:text-blue-600">
             building and shipping
           </span>{" "}
           stuffs. I&apos;m Looking for new opportunities, freelancing &
@@ -60,7 +60,7 @@ const Homepage = () => {
           </a>
           . I&apos;m super active there.
         </p>
-        <Link href="/about" className="text-blue-700 underline">
+        <Link href="/about" className="text-blue-700 text-sm underline">
           Read More.
         </Link>
         <Socials />

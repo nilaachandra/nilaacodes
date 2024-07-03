@@ -8,7 +8,7 @@ const Techstack = () => {
         {skills.map((skill) => (
           <div
             key={skill.skillName}
-            className="cursor-pointer transition-all duration-200 hover:dark:bg-white hover:dark:text-black hover:bg-black hover:text-white flex items-center gap-1 border border-black dark:border-white px-2 rounded-md text-sm"
+            className="cursor-pointer transition-all duration-200 hover:dark:bg-white hover:dark:text-black hover:bg-black hover:text-white flex items-center gap-1 border border-black dark:border-white px-2 rounded-md lg:text-base text-sm"
           >
             {skill.skillIcon}
             <p className="tracking-tight leading-normal">{skill.skillName}</p>
