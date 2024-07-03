@@ -31,7 +31,7 @@ const Homepage = () => {
       </div>
 
       <div className="mt-3">
-        <p className="lg:text-lg text-base leading-none tracking-tight">
+        <p className="lg:text-lg text-base leading-5 tracking-tight">
           Once a{" "}
           <span className="italic font-semibold dark:text-blue-600">
             Geology
