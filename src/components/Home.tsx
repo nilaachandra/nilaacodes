@@ -4,9 +4,13 @@ import Techstack from "./Techstack";
 import Link from "next/link";
 import Socials from "./Socials";
 import SelectedWorks from "./SelectedWorks";
-import { MotionDiv, MotionHeader, childVariants, containerVariants } from "@/components/MotionDiv";
-
-
+import {
+  MotionDiv,
+  MotionHeader,
+  childVariants,
+  containerVariants,
+} from "@/components/MotionDiv";
+import MyWritings from "./MyWritings";
 
 const Homepage = () => {
   return (
@@ -36,7 +40,6 @@ const Homepage = () => {
             />
           </div>
         </MotionHeader>
-
         <MotionDiv variants={childVariants}>
           <p className="lg:text-lg text-base leading-5 tracking-tight">
             Once a{" "}
@@ -84,6 +87,33 @@ const Homepage = () => {
         <MotionDiv variants={childVariants}>
           <SelectedWorks />
         </MotionDiv>
+        <Wigglyline />
+        <MotionDiv variants={childVariants}>
+          <MyWritings />
+        </MotionDiv>
+        <Wigglyline />
+        <h1>
+          That&apos;s all for now, folks. The site is still under
+          construction, because perfection takes time. For any burning
+          questions, brilliant feedback, or life-changing suggestions, feel free
+          to slide into my DMs on{" "}
+          <a
+            href="https://x.com/nilaacodes"
+            target="_blank"
+            className="underline text-blue-700"
+          >
+            Twitter
+          </a>{" "}
+          or drop me an{" "}
+          <a
+            href="https://nilalaishram@gmail.com"
+            target="_blank"
+            className="underline text-blue-700"
+          >
+            email
+          </a>
+          . Thanks for stopping by 🤠!
+        </h1>
       </section>
     </MotionDiv>
   );
