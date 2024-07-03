@@ -14,6 +14,10 @@ const bricolageRegular = Bricolage_Grotesque({
 export const metadata: Metadata = {
   title: "Nilaacodes",
   description: "Nilaa's Portfolio",
+  icons: {
+    icon: ['nilaacodes-light.png'],
+    shortcut: ['nilaacodes-light.png'],
+  },
   openGraph: {
     title: 'Nilaacodes',
     description: 'Nilaacodes - Portfolio',
@@ -31,10 +35,7 @@ export const metadata: Metadata = {
     locale: 'en-IN',
     type: 'website',
   },
-  icons: {
-    icon: '/nilaacodes-light.png',
-    shortcut: '/nilaacodes-light.png',
-  },
+ 
 };
 
 export default function RootLayout({
