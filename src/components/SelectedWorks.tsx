@@ -38,7 +38,7 @@ const SelectedWorks = () => {
             </div>
             <div className="div flex items-center gap-3">
               <a
-                href="https:27days.vercel.app"
+                href="https://27days.vercel.app"
                 target="_blank"
                 className="text-blue-700"
               >
