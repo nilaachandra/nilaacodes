@@ -53,7 +53,7 @@ const SelectedWorks = () => {
               </a>
             </div>
           </div>
-          <p>
+          <p className="leading-5">
             27 Days is a generative AI powered gamified platform where you can
             start your journey of getting rid from an addiction you have.
           </p>
@@ -163,7 +163,7 @@ const SelectedWorks = () => {
               </a>
             </div>
           </div>
-          <p>
+          <p className="leading-5">
             Inspired by Marc Louvion&apos;s 50 Hacks platform, 27 Startups is a
             platform for your startup or apps ideas. Here you can share, steal
             and comment on other people&apos;s ideas without needing to have an
