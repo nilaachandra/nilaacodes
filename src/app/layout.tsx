@@ -15,8 +15,8 @@ export const metadata: Metadata = {
   title: "Nilaacodes",
   description: "Nilaa's Portfolio",
   icons: {
-    icon: ['nilaacodes-light.png'],
-    shortcut: ['nilaacodes-light.png'],
+    icon: ['nilaacodes-dark.png'],
+    shortcut: ['nilaacodes-dark.png'],
   },
   openGraph: {
     title: 'Nilaacodes',
