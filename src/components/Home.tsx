@@ -32,7 +32,7 @@ const Homepage = () => {
           </div>
           <div className="profile justify-center flex items-center">
             <Image
-              src="/nilaacodes-pfp.png"
+              src="/nilaacodes-pfp2.jpg"
               height={120}
               width={120}
               className="rounded-lg"
