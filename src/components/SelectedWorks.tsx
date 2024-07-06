@@ -15,39 +15,29 @@ import {
 const SelectedWorks = () => {
   return (
     <div>
-      <h1 className="font-bold text-lg mb-3">Selected Works</h1>
+      <h1 className="font-bold text-lg mb-3">Selected Works 👨🏻‍💻</h1>
       <div className="list flex flex-col gap-3">
         <div className="project border dark:border-white border-black p-3 rounded-lg">
           <div className="title flex justify-between items-center">
             <div className="flex items-center gap-2">
               <h1 className="text-xl font-bold">27days.life</h1>
-              <span
-                className="cursor-pointer transition-all duration-200 
-             hover:dark:bg-white hover:dark:text-black hover:bg-black
-              hover:text-white border border-black dark:border-white px-2 text-sm rounded-md p-0.5"
-              >
-                Open Source
-              </span>
-              <span
-                className="cursor-pointer transition-all duration-200 
-             hover:dark:bg-white hover:dark:text-black hover:bg-black
-              hover:text-white border border-black dark:border-white px-2 text-sm rounded-md p-0.5"
-              >
-                Personal
-              </span>
             </div>
             <div className="div flex items-center gap-3">
               <a
                 href="https://27days.vercel.app"
                 target="_blank"
-                className="text-blue-700"
+                className="cursor-pointer transition-all duration-200 
+             hover:dark:bg-white hover:dark:text-black hover:bg-black
+              hover:text-white border border-black dark:border-white px-2 text-sm rounded-md p-0.5"
               >
-                <LuLink size={20} />
+                Link
               </a>
               <a
                 href="https://github.com/nilaachandra/twentysevendays"
                 target="_blank"
-                className=""
+                className="cursor-pointer transition-all duration-200 
+             hover:dark:bg-white hover:dark:text-black hover:bg-black
+              hover:text-white border border-black dark:border-white px-2 text-sm rounded-md p-0.5"
               >
                 <LuGithub size={20} />
               </a>
@@ -86,9 +76,7 @@ const SelectedWorks = () => {
               hover:text-white flex items-center justify-center gap-1 border border-black dark:border-white px-2 rounded-md lg:text-base text-sm"
             >
               <SiReactquery size={18} />
-              <p className="tracking-tight leading-normal">
-                React Query
-              </p>
+              <p className="tracking-tight leading-normal">React Query</p>
             </div>
 
             <div
@@ -130,34 +118,24 @@ const SelectedWorks = () => {
         <div className="project border dark:border-white border-black p-3 rounded-lg">
           <div className="title flex justify-between items-center">
             <div className="flex items-center gap-2">
-              <h1 className="text-xl font-bold">27Startups</h1>
-              <span
-                className="cursor-pointer transition-all duration-200 
-             hover:dark:bg-white hover:dark:text-black hover:bg-black
-              hover:text-white border border-black dark:border-white px-2 text-sm rounded-md p-0.5"
-              >
-                Open Source
-              </span>
-              <span
-                className="cursor-pointer transition-all duration-200 
-             hover:dark:bg-white hover:dark:text-black hover:bg-black
-              hover:text-white border border-black dark:border-white px-2 text-sm rounded-md p-0.5"
-              >
-                Personal
-              </span>
+              <h1 className="text-xl font-bold">27Startups</h1> 
             </div>
             <div className="div flex items-center gap-3">
               <a
                 href="https://27startups.vercel.app"
                 target="_blank"
-                className="text-blue-700"
+                className="cursor-pointer transition-all duration-200 
+             hover:dark:bg-white hover:dark:text-black hover:bg-black
+              hover:text-white border border-black dark:border-white px-2 text-sm rounded-md p-0.5"
               >
-                <LuLink size={20} />
+                Link
               </a>
               <a
                 href="https://github.com/nilaachandra/27-Startups"
                 target="_blank"
-                className=""
+                className="cursor-pointer transition-all duration-200 
+             hover:dark:bg-white hover:dark:text-black hover:bg-black
+              hover:text-white border border-black dark:border-white px-2 text-sm rounded-md p-0.5"
               >
                 <LuGithub size={20} />
               </a>
@@ -198,9 +176,7 @@ const SelectedWorks = () => {
               hover:text-white flex items-center justify-center gap-1 border border-black dark:border-white px-2 rounded-md lg:text-base text-sm"
             >
               <SiReactquery size={18} />
-              <p className="tracking-tight leading-normal">
-                React Query
-              </p>
+              <p className="tracking-tight leading-normal">React Query</p>
             </div>
 
             <div
@@ -224,8 +200,16 @@ const SelectedWorks = () => {
       </div>
       <p className="leading-5 mt-3">
         These are some of my works, others aren&apos;t worthy of being included
-        here, as it still requires some improvements. I&apos;ll update the rest later, meanwhile you can still check my
-        works on my <a href='https://github.com/nilaachandra?tab=repositories' target="_blank" className="text-blue-700 underline">GitHub</a>.
+        here, as it still requires some improvements. I&apos;ll update the rest
+        later, meanwhile you can still check my works on my{" "}
+        <a
+          href="https://github.com/nilaachandra?tab=repositories"
+          target="_blank"
+          className="text-blue-700 underline"
+        >
+          GitHub
+        </a>
+        .
       </p>
     </div>
   );

@@ -61,7 +61,7 @@ const Navbar = () => {
           <ThemeToggle />
         </div>
       </div>
-      <div className="link-container w-full flex justify-between">
+      {/* <div className="link-container w-full flex justify-between">
         {Object.entries(navLinks).map(([path, { linkName }]) => (
           <Link
             key={path}
@@ -73,7 +73,7 @@ const Navbar = () => {
             {linkName}
           </Link>
         ))}
-      </div>
+      </div> */}
     </header>
   );
 };

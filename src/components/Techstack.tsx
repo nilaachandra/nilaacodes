@@ -3,7 +3,7 @@ import skills from "@/staticdata/skills";
 const Techstack = () => {
   return (
     <div className="w-full">
-      <h1 className="font-bold text-lg">My Tech Stack</h1>
+      <h1 className="font-bold text-lg">My Tech Stack 🛠️</h1>
       <div className="skills flex flex-wrap gap-1.5 mt-3 ">
         {skills.map((skill) => (
           <div

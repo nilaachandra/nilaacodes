@@ -21,7 +21,7 @@ const Homepage = () => {
           className="hello grid grid-cols-3  gap-3 items-center"
         >
           <div className="desc w-full col-span-2">
-            <h1 className="font-bold lg:text-3xl text-xl">
+            <h1 className="font-bold lg:text-3xl text-lg">
               Hey, I&apos;m <span className="text-blue-700">Nilaa</span>{" "}
               Laishram 👋
             </h1>
@@ -43,24 +43,24 @@ const Homepage = () => {
         <MotionDiv variants={childVariants} className="mt-3">
           <p className="text-base leading-5 tracking-tight">
             Once a{" "}
-            <span className="italic font-semibold dark:text-blue-600">
+            <span className="italic font-semibold  dark:text-blue-600">
               Geology
             </span>{" "}
             buff, now I dive into{" "}
-            <span className="italic font-semibold dark:text-blue-600">
+            <span className="italic font-semibold  dark:text-blue-600">
               code
             </span>{" "}
             instead of{" "}
-            <span className="italic font-semibold dark:text-blue-600">
+            <span className="italic font-semibold  dark:text-blue-600">
               rocks
             </span>
             . I traded fossils for frameworks and never looked back. I&apos;m
             passionate about learning, especially{" "}
-            <span className="italic font-semibold dark:text-blue-600">
+            <span className="italic font-semibold  dark:text-blue-600">
               Next.js
             </span>
             , and love{" "}
-            <span className="italic font-semibold dark:text-blue-600">
+            <span className="italic font-semibold  dark:text-blue-600">
               building and shipping
             </span>{" "}
             stuffs. I&apos;m Looking for new opportunities, freelancing &
@@ -74,9 +74,9 @@ const Homepage = () => {
             </a>
             . I&apos;m super active there.
           </p>
-          <Link href="/about" className="text-blue-700 text-sm underline">
+          {/* <Link href="/about" className="text-blue-700 text-sm underline">
             Read More.
-          </Link>
+          </Link> */}
           <Socials />
         </MotionDiv>
         <MotionDiv variants={childVariants}>

@@ -1,5 +1,6 @@
 import React, { ReactNode } from "react";
-import { LuGithub, LuInstagram, LuLinkedin, LuTwitter } from "react-icons/lu";
+import { LuCoffee, LuGithub, LuInstagram, LuLinkedin, LuTwitter } from "react-icons/lu";
+import { SiBuymeacoffee } from "react-icons/si";
 type SocialLink = {
     linkName: string,
     linkHref: string,
@@ -26,6 +27,11 @@ const socialLinks: SocialLink[] = [
     linkName: "LinkedIn",
     linkHref: "https://www.linkedin.com/in/nila-chandra-laishram-15a589256/",
     linkIcon: <LuLinkedin size={28} />,
+  },
+  {
+    linkName: "BuyMeACoffee",
+    linkHref: "https://www.buymeacoffee.com/nilaacodes",
+    linkIcon: <SiBuymeacoffee size={28} />,
   },
 ];
 
