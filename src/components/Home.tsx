@@ -77,7 +77,6 @@ const Homepage = () => {
           {/* <Link href="/about" className="text-blue-700 text-sm underline">
             Read More.
           </Link> */}
-          <Socials />
         </MotionDiv>
         <MotionDiv variants={childVariants}>
           <Wigglyline />
@@ -93,10 +92,10 @@ const Homepage = () => {
         </MotionDiv>
         <Wigglyline />
         <h1 className="leading-5">
-          That&apos;s all for now, folks. The site is still under
-          construction, because perfection takes time. For any burning
-          questions, brilliant feedback, or life-changing suggestions, feel free
-          to slide into my DMs on{" "}
+          That&apos;s all for now, folks. The site is still under construction,
+          because perfection takes time. For any burning questions, brilliant
+          feedback, or life-changing suggestions, feel free to slide into my DMs
+          on{" "}
           <a
             href="https://x.com/nilaacodes"
             target="_blank"
@@ -115,7 +114,9 @@ const Homepage = () => {
           . Thanks for stopping by 🤠!
         </h1>
       </section>
-      <Wigglyline/>
+      <Wigglyline />
+      <Socials />
+      <Wigglyline />
     </MotionDiv>
   );
 };

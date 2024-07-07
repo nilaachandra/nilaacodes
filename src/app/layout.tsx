@@ -13,7 +13,7 @@ const inter = Inter({ subsets: ["latin"], weight: ["500", "800"] });
 
 const bricolageRegular = Bricolage_Grotesque({
   subsets: ["latin"],
-  weight: ["500", "800"],
+  weight: ["400", "800"],
 });
 
 export const metadata: Metadata = {
@@ -48,7 +48,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={bricolageRegular.className} suppressHydrationWarning>
+    <html lang="en" className={GeistSans.className} suppressHydrationWarning>
       <body className="w-full lg:px-[64vh] px-4 py-4 min-h-screen">
         <Providers>
           <Navbar />
