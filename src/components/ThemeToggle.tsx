@@ -15,7 +15,7 @@ export default function ThemeToggle() {
   return (
     <button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
       {mounted &&
-        (theme === "dark" ? (<FiSun size={22} />) : (<FiMoon size={22} />))}
+        (theme === "dark" ? (<h1>☀️</h1>) : (<h1>🌙</h1>))}
     </button>
   );
 }
