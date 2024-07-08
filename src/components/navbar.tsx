@@ -29,8 +29,8 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className="w-full sticky top-0 py-3 dark:bg-black bg-white mb-2">
-      <div className="flex justify-between items-end mb-4">
+    <header className="w-full sticky top-0 rounded-md mb-2 ">
+      <div className="flex justify-between items-center p-2 mb-4 bg-transparent backdrop-blur-md">
         <div className="h-10 w-10 p-0.5 border-2 justify-center bg-black dark:bg-white flex items-center dark:border-white border-black rounded-md">
           {mounted &&
             (theme === "dark" ? (
@@ -54,10 +54,11 @@ const Navbar = () => {
           <a
             href="https://x.com/nilaacodes"
             target="_blank"
-            className="text-blue-600"
+            className="text-blue-600 underline"
           >
-            Hire Me🚀
+            Hire Me
           </a>
+          🚀
           <ThemeToggle />
         </div>
       </div>

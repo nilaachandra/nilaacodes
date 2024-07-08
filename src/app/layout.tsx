@@ -49,7 +49,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={GeistSans.className} suppressHydrationWarning>
-      <body className="w-full lg:px-[64vh] px-4 py-4 min-h-screen">
+      <body className="max-w-[712px] mx-auto w-full px-4 min-h-screen">
         <Providers>
           <Navbar />
           <main>{children}</main>
