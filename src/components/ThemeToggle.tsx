@@ -15,7 +15,7 @@ export default function ThemeToggle() {
   return (
     <button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
       {mounted &&
-        (theme === "dark" ? (<h1>☀️</h1>) : (<h1>🌙</h1>))}
+        (theme === "dark" ? (<h1 className='text-lg'>☀️</h1>) : (<h1 className='text-lg'>🌕</h1>))}
     </button>
   );
 }
