@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import { GeistSansNonVariable } from "geist/font/sans-non-variable";
-
+import { ViewTransitions } from "next-view-transitions";
 const inter = Inter({ subsets: ["latin"], weight: ["500", "800"] });
 
 const bricolageRegular = Bricolage_Grotesque({
@@ -48,15 +48,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={GeistSans.className} suppressHydrationWarning>
-      <body className="max-w-[712px] mx-auto w-full px-4 min-h-screen">
-        <Providers>
-          <Navbar />
-          <main>{children}</main>
-          <Footer />
-        </Providers>
-        <Analytics />
-      </body>
-    </html>
+    <ViewTransitions>
+      <html lang="en" className={GeistSans.className} suppressHydrationWarning>
+        <body className="max-w-[712px] mx-auto w-full px-4 min-h-screen">
+          <Providers>
+            <Navbar />
+            <main>{children}</main>
+            <Footer />
+          </Providers>
+          <Analytics />
+        </body>
+      </html>
+    </ViewTransitions>
   );
 }
