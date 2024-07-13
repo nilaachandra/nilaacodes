@@ -20,11 +20,7 @@ const Socials = () => {
           <Buildspace />
         </a>
       </div>
-      <p className="mt-3">Also Let&apos;s play <span className="italic font-semibold  dark:text-blue-600">
-              Football
-            </span> ⚽ and <span className="italic font-semibold  dark:text-blue-600">
-              Chess
-            </span>♟️</p>
+      
     </section>  
   );
 };

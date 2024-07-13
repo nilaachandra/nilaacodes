@@ -25,10 +25,14 @@ const Homepage = () => {
               Hey, I&apos;m <span className="text-blue-700">Nilaa</span>{" "}
               Laishram 👋
             </h1>
-            <p className="text-base tracking-tight leading-5">
-              - Full Stack Developer, Freelancer and UI designer🚀 who loves to
-              build and ship things.
-            </p>
+            <ul className="list-inside">
+              <li>
+                <span className="mr-3">🚀</span>
+                <span className="font-bold">Full Stack Developer</span> and{" "}
+                <span className="font-bold">Freelancer</span> who loves to build
+                and ship stuffs.
+              </li>
+            </ul>
           </div>
           <div className="profile justify-center flex items-center">
             <Image
@@ -41,42 +45,33 @@ const Homepage = () => {
           </div>
         </MotionHeader>
         <MotionDiv variants={childVariants} className="mt-3">
-          <p className="text-base leading-5 tracking-tight">
-            Once a{" "}
-            <span className="italic font-semibold  dark:text-blue-600">
-              Geology
-            </span>{" "}
-            buff, now I dive into{" "}
-            <span className="italic font-semibold  dark:text-blue-600">
-              code
-            </span>{" "}
-            instead of{" "}
-            <span className="italic font-semibold  dark:text-blue-600">
-              rocks
-            </span>
-            . I traded fossils for frameworks and never looked back. I&apos;m
-            passionate about learning, especially{" "}
-            <span className="italic font-semibold  dark:text-blue-600">
-              Next.js
-            </span>
-            , and love{" "}
-            <span className="italic font-semibold  dark:text-blue-600">
-              building and shipping
-            </span>{" "}
-            stuffs. I&apos;m Looking for new opportunities, freelancing &
-            collaborations. Reach me out on{" "}
-            <a
-              href="https://x.com/nilaacodes"
-              target="_blank"
-              className="underline text-blue-700"
-            >
-              Twitter
-            </a>
-            . I&apos;m super active there.
-          </p>
-          {/* <Link href="/about" className="text-blue-700 text-sm underline">
-            Read More.
-          </Link> */}
+          <ul className="list-inside space-y-2">
+            <li>
+              <span className="mr-2">🌍</span>I&apos;ve got a background in{" "}
+              <span className="font-bold">Geology</span> and{" "}
+              <span className="font-bold">Mathematics</span>.
+            </li>
+            <li>
+              <span className="mr-2">⚛️</span>Mainly working with{" "}
+              <span className="font-bold">React</span> and{" "}
+              <span className="font-bold">Next JS</span> with{" "}
+              <span className="font-bold">TypeScript</span>
+            </li>
+            <li>
+              <span className="mr-2">🥺</span>Open to opportunities and
+              freelancing gigs.
+            </li>
+            <li>
+              <span className="mr-2">⚽♟️</span>Also into{" "}
+              <span className="font-bold">Football</span>, and{" "}
+              <span className="font-bold">Chess</span>
+            </li>
+          </ul>
+          <Wigglyline />
+
+        </MotionDiv>
+        <MotionDiv variants={childVariants} className="mt-3">
+          <Socials />
         </MotionDiv>
         <MotionDiv variants={childVariants}>
           <Wigglyline />
@@ -114,8 +109,6 @@ const Homepage = () => {
           . Thanks for stopping by 🤠!
         </h1>
       </section>
-      <Wigglyline />
-      <Socials />
       <Wigglyline />
     </MotionDiv>
   );
