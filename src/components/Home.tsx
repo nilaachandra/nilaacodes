@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Wigglyline from "./Wigglyline";
 import Techstack from "./Techstack";
-import Link from "next/link";
 import Socials from "./Socials";
 import SelectedWorks from "./SelectedWorks";
 import {
@@ -26,7 +25,7 @@ const Homepage = () => {
               Laishram 👋
             </h1>
             <ul className="list-inside">
-              <li>
+              <li className="tracking-tight">
                 <span className="mr-3">🚀</span>
                 <span className="font-bold">Full Stack Developer</span> and{" "}
                 <span className="font-bold">Freelancer</span> who loves to build
@@ -45,17 +44,17 @@ const Homepage = () => {
           </div>
         </MotionHeader>
         <MotionDiv variants={childVariants} className="mt-3">
-          <ul className="list-inside space-y-2">
+          <ul className="list-inside space-y-1 tracking-tight">
             <li>
               <span className="mr-2">🌍</span>I&apos;ve got a background in{" "}
-              <span className="font-bold">Geology</span> and{" "}
-              <span className="font-bold">Mathematics</span>.
+              <span className="font-bold text-blue-700">Geology</span> and{" "}
+              <span className="font-bold text-blue-700">Mathematics</span>.
             </li>
             <li>
               <span className="mr-2">⚛️</span>Mainly working with{" "}
-              <span className="font-bold">React</span> and{" "}
-              <span className="font-bold">Next JS</span> with{" "}
-              <span className="font-bold">TypeScript</span>
+              <span className="font-bold text-blue-700">React</span> and{" "}
+              <span className="font-bold text-blue-700">Next JS</span> with{" "}
+              <span className="font-bold text-blue-700">TypeScript</span>
             </li>
             <li>
               <span className="mr-2">🥺</span>Open to opportunities and
@@ -63,8 +62,8 @@ const Homepage = () => {
             </li>
             <li>
               <span className="mr-2">⚽♟️</span>Also into{" "}
-              <span className="font-bold">Football</span>, and{" "}
-              <span className="font-bold">Chess</span>
+              <span className="font-bold text-blue-700">Football</span>, and{" "}
+              <span className="font-bold text-blue-700">Chess</span>
             </li>
           </ul>
           <Wigglyline />
