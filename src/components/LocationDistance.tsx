@@ -6,6 +6,10 @@ import { calculateDistance } from '@/lib/calculateDistance';
 import { Location, getLocation } from '@/lib/getLocation';
 import { getUserIp } from '@/lib/getUserIp';
 
+// Hardcoded server coordinates
+const SERVER_LAT = 24.8346780; // Example latitude
+const SERVER_LON = 92.8165690; // Example longitude
+
 const LocationDistance: React.FC = () => {
   const [distance, setDistance] = useState<number | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -13,22 +17,17 @@ const LocationDistance: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const serverIp = '117.205.191.217'; // Replace with your server's IP address test ip:84.17.240.214
         const userIp = await getUserIp();
-
-        const serverLocation = await getLocation(serverIp);
         const userLocation = await getLocation(userIp);
 
-        console.log('Server Location:', serverLocation);
         console.log('User Location:', userLocation);
 
-        const [serverLat, serverLon] = serverLocation.loc.split(',').map(Number);
         const [userLat, userLon] = userLocation.loc.split(',').map(Number);
 
-        console.log('Server Coordinates:', serverLat, serverLon);
+        console.log('Server Coordinates:', SERVER_LAT, SERVER_LON);
         console.log('User Coordinates:', userLat, userLon);
 
-        const distance = calculateDistance(userLat, userLon, serverLat, serverLon);
+        const distance = calculateDistance(userLat, userLon, SERVER_LAT, SERVER_LON);
         console.log('Calculated Distance:', distance);
 
         setDistance(distance);
