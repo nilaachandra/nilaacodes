@@ -11,3 +11,4 @@ export async function getUserLocation(): Promise<Location> {
   const response = await axios.get<Location>('https://ipinfo.io/json?token=e845c03e3583aa');
   return response.data;
 }
+
