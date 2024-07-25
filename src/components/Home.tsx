@@ -10,6 +10,7 @@ import {
   containerVariants,
 } from "@/components/MotionDiv";
 import MyWritings from "./MyWritings";
+import LocationDistance from "./LocationDistance";
 
 const Homepage = () => {
   return (
@@ -71,6 +72,7 @@ const Homepage = () => {
         </MotionDiv>
         <MotionDiv variants={childVariants} className="mt-3">
           <Socials />
+          <LocationDistance/>
         </MotionDiv>
         <MotionDiv variants={childVariants}>
           <Wigglyline />
