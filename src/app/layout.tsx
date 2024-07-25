@@ -49,22 +49,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <PHProvider>
-      <ViewTransitions>
-        <html
-          lang="en"
-          className={GeistSans.className}
-          suppressHydrationWarning
-        >
+    <ViewTransitions>
+      <html lang="en" className={GeistSans.className} suppressHydrationWarning>
+        <PHProvider>
           <body className="max-w-[712px] mx-auto w-full px-4 min-h-screen">
+            <PostHogPageView/>
             <Providers>
               <Navbar />
               <main>{children}</main>
               <Footer />
             </Providers>
           </body>
-        </html>
-      </ViewTransitions>
-    </PHProvider>
+        </PHProvider>
+      </html>
+    </ViewTransitions>
   );
 }
