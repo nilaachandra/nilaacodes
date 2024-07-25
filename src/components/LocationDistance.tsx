@@ -3,23 +3,23 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { calculateDistance } from '@/lib/calculateDistance';
-import { Location, getUserLocation } from '@/lib/getUserLocation';
-import { getServerLocation } from '@/lib/getServerLocation';
+import { Location, getLocation } from '@/lib/getLocation';
+import { getUserIp } from '@/lib/getUserIp';
 
 const LocationDistance: React.FC = () => {
   const [distance, setDistance] = useState<number | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    console.log('Component mounted');
     const fetchData = async () => {
       try {
-        console.log('Fetching server location...');
-        const serverLocation = await getServerLocation();
-        console.log('Server Location:', serverLocation);
+        const serverIp = '117.205.191.217'; // Replace with your server's IP address test ip:84.17.240.214
+        const userIp = await getUserIp();
 
-        console.log('Fetching user location...');
-        const userLocation = await getUserLocation();
+        const serverLocation = await getLocation(serverIp);
+        const userLocation = await getLocation(userIp);
+
+        console.log('Server Location:', serverLocation);
         console.log('User Location:', userLocation);
 
         const [serverLat, serverLon] = serverLocation.loc.split(',').map(Number);

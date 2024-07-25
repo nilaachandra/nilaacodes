@@ -7,7 +7,7 @@ export interface Location {
   loc: string; // "latitude,longitude"
 }
 
-export async function getServerLocation(): Promise<Location> {
-  const response = await axios.get<Location>('https://ipinfo.io/json?token=e845c03e3583aa');
+export async function getLocation(ip: string): Promise<Location> {
+  const response = await axios.get<Location>(`https://ipinfo.io/${ip}/json?token=e845c03e3583aa`);
   return response.data;
 }
