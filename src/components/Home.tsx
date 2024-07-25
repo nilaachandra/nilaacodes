@@ -10,7 +10,7 @@ import {
   containerVariants,
 } from "@/components/MotionDiv";
 import MyWritings from "./MyWritings";
-import LocationDistance from "./LocationDistance";
+import MyLocation from "./MyLocation";
 
 const Homepage = () => {
   return (
@@ -28,8 +28,8 @@ const Homepage = () => {
             <ul className="list-inside">
               <li className="tracking-tight">
                 <span className="mr-3">🚀</span>
-                <span className="font-bold">Full Stack Developer</span> and{" "}
-                <span className="font-bold">Freelancer</span> who loves to build
+                <span className="font-bold italic">Full Stack Developer</span> and{" "}
+                <span className="font-bold italic">Freelancer</span> who loves to build
                 and ship stuffs.
               </li>
             </ul>
@@ -44,18 +44,23 @@ const Homepage = () => {
             />
           </div>
         </MotionHeader>
+
         <MotionDiv variants={childVariants} className="mt-3">
           <ul className="list-inside space-y-1 tracking-tight">
             <li>
+              {" "}
+              <MyLocation />{" "}
+            </li>
+            <li>
               <span className="mr-2">🌍</span>I&apos;ve got a background in{" "}
-              <span className="font-bold text-blue-700">Geology</span> and{" "}
-              <span className="font-bold text-blue-700">Mathematics</span>.
+              <span className="font-bold italic text-blue-700">Geology</span> and{" "}
+              <span className="font-bold italic text-blue-700">Mathematics</span>.
             </li>
             <li>
               <span className="mr-2">⚛️</span>Mainly working with{" "}
-              <span className="font-bold text-blue-700">React</span> and{" "}
-              <span className="font-bold text-blue-700">Next JS</span> with{" "}
-              <span className="font-bold text-blue-700">TypeScript</span>
+              <span className="font-bold italic text-blue-700">React</span> and{" "}
+              <span className="font-bold italic text-blue-700">Next JS</span> with{" "}
+              <span className="font-bold italic text-blue-700">TypeScript</span>.
             </li>
             <li>
               <span className="mr-2">🥺</span>Open to opportunities and
@@ -63,16 +68,14 @@ const Homepage = () => {
             </li>
             <li>
               <span className="mr-2">⚽♟️</span>Also into{" "}
-              <span className="font-bold text-blue-700">Football</span>, and{" "}
-              <span className="font-bold text-blue-700">Chess</span>
+              <span className="font-bold italic text-blue-700">Football</span>, and{" "}
+              <span className="font-bold italic text-blue-700">Chess</span>.
             </li>
           </ul>
           <Wigglyline />
-
         </MotionDiv>
         <MotionDiv variants={childVariants} className="mt-3">
           <Socials />
-          <LocationDistance/>
         </MotionDiv>
         <MotionDiv variants={childVariants}>
           <Wigglyline />

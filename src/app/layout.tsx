@@ -3,12 +3,11 @@ import { Bricolage_Grotesque, Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./provider";
 import Navbar from "@/components/navbar";
-import { Analytics } from "@vercel/analytics/react";
 import Footer from "@/components/Footer";
 import { GeistSans } from "geist/font/sans";
-import { GeistMono } from "geist/font/mono";
-import { GeistSansNonVariable } from "geist/font/sans-non-variable";
 import { ViewTransitions } from "next-view-transitions";
+import dynamic from "next/dynamic";
+import { PHProvider } from "./Providers";
 const inter = Inter({ subsets: ["latin"], weight: ["500", "800"] });
 
 const bricolageRegular = Bricolage_Grotesque({
@@ -41,24 +40,31 @@ export const metadata: Metadata = {
     type: "website",
   },
 };
-
+const PostHogPageView = dynamic(() => import("@/app/PostHogPageView"), {
+  ssr: false,
+});
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <ViewTransitions>
-      <html lang="en" className={GeistSans.className} suppressHydrationWarning>
-        <body className="max-w-[712px] mx-auto w-full px-4 min-h-screen">
-          <Providers>
-            <Navbar />
-            <main>{children}</main>
-            <Footer />
-          </Providers>
-          <Analytics />
-        </body>
-      </html>
-    </ViewTransitions>
+    <PHProvider>
+      <ViewTransitions>
+        <html
+          lang="en"
+          className={GeistSans.className}
+          suppressHydrationWarning
+        >
+          <body className="max-w-[712px] mx-auto w-full px-4 min-h-screen">
+            <Providers>
+              <Navbar />
+              <main>{children}</main>
+              <Footer />
+            </Providers>
+          </body>
+        </html>
+      </ViewTransitions>
+    </PHProvider>
   );
 }
