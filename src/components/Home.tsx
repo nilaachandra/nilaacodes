@@ -52,7 +52,7 @@ const Homepage = () => {
               <MyLocation />{" "}
             </li>
             <li>
-              <span className="mr-2">🌍</span>I&apos;ve got a background in{" "}
+              <span className="mr-2">🌍</span>Got a background in{" "}
               <span className="font-bold italic text-blue-700">Geology</span> and{" "}
               <span className="font-bold italic text-blue-700">Mathematics</span>.
             </li>
