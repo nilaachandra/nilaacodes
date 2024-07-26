@@ -9,6 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@notion-render/bookmark-plugin": "^0.0.2",
+    "@notion-render/client": "^0.0.2",
+    "@notion-render/hljs-plugin": "^0.0.2",
+    "@notionhq/client": "^2.2.15",
     "@tailwindcss/typography": "^0.5.13",
     "axios": "^1.7.2",
     "date-fns": "^3.6.0",
