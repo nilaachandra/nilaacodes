@@ -8,6 +8,9 @@ import { GeistSans } from "geist/font/sans";
 import { ViewTransitions } from "next-view-transitions";
 import dynamic from "next/dynamic";
 import { PHProvider } from "./Providers";
+import { AppProgressBar as ProgressBar } from "next-nprogress-bar";
+import ProgressProvider from "./ProgressProvider";
+
 const inter = Inter({ subsets: ["latin"], weight: ["500", "800"] });
 
 const bricolageRegular = Bricolage_Grotesque({
@@ -53,12 +56,14 @@ export default function RootLayout({
       <html lang="en" className={GeistSans.className} suppressHydrationWarning>
         <PHProvider>
           <body className="max-w-[712px] mx-auto w-full px-4 min-h-screen">
-            <PostHogPageView/>
-            <Providers>
-              <Navbar />
-              <main>{children}</main>
-              <Footer />
-            </Providers>
+            <PostHogPageView />
+            <ProgressProvider>
+              <Providers>
+                <Navbar />
+                <main>{children}</main>
+                <Footer />
+              </Providers>
+            </ProgressProvider>
           </body>
         </PHProvider>
       </html>
