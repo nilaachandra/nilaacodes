@@ -38,11 +38,10 @@ const Writings = async () => {
           const views = post.properties.Views.number;
 
           return (
-            <MotionHeader variants={childVariants} className="">
+            <MotionHeader key={index} variants={childVariants} className="">
               <Link
                 href={`/writings/${slug}`}
                 className="leading-none tracking-tight flex flex-col hover:bg-zinc-200 p-1 rounded-md transition-all duration-200 dark:hover:bg-zinc-900"
-                key={index}
               >
                 <div className="flex justify-between items-center">
                   <h1 className="font-semibold lg:text-lg text-base">
