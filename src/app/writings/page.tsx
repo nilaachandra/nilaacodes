@@ -8,6 +8,8 @@ import {
   MotionHeader,
 } from "@/components/MotionDiv";
 import { Link } from "next-view-transitions";
+import BlogPostLink from "../../components/BlogLink";
+
 
 // Helper function to format the date
 const formatDate = (date: string): string => {
@@ -39,25 +41,14 @@ const Writings = async () => {
 
           return (
             <MotionHeader key={index} variants={childVariants} className="">
-              <Link
-                href={`/writings/${slug}`}
-                className="leading-none tracking-tight flex flex-col hover:bg-zinc-200 p-1 rounded-md transition-all duration-200 dark:hover:bg-zinc-900"
-              >
-                <div className="flex justify-between items-center">
-                  <h1 className="font-semibold lg:text-lg text-base">
-                    {index + 1}. {title}
-                  </h1>
-                  <p className="dark:text-zinc-400 text-zinc-600">
-                    {createdDate}
-                  </p>
-                </div>
-                <p className="dark:text-zinc-400 text-zinc-600">
-                  {description}
-                </p>
-                <p className="dark:text-zinc-400 text-zinc-600 text-sm">
-                  {views === null ? 0 : views} views
-                </p>
-              </Link>
+              <BlogPostLink
+                slug={slug}
+                index={index}
+                title={title}
+                createdDate={createdDate}
+                description={description}
+                views={views}
+              />
             </MotionHeader>
           );
         })}

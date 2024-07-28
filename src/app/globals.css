@@ -6,3 +6,7 @@
   background-color: black;
 }
 
+.debug {
+  @apply border border-red-500;
+}
+
