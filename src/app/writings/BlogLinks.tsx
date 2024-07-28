@@ -2,7 +2,7 @@ import { format } from "date-fns";
 import { enIN } from "date-fns/locale";
 import { MotionHeader, childVariants, containerVariants } from "@/components/MotionDiv";
 import BlogPostLink from "@/components/BlogLink";
-import { fetchPages, NotionPage } from "./actions";
+import { fetchPages, NotionPage } from "@/lib/notion";
 
 // Helper function to format the date
 const formatDate = (date: string): string => {

@@ -9,8 +9,8 @@ import {
   containerVariants,
   MotionHeader,
 } from "@/components/MotionDiv";
-import { NotionPage } from "./actions";
 import { BlockObjectResponse } from "@notionhq/client/build/src/api-endpoints";
+import { NotionPage } from "@/lib/notion";
 
 // TypeScript type for the component props
 type BlogPageClientProps = {
