@@ -1,8 +1,13 @@
-import { NotionRenderer } from '@notion-render/client';
-import hljsPlugin from '@notion-render/hljs-plugin';
-import bookmarkPlugin from '@notion-render/bookmark-plugin';
-import BlogPageClient from './BlogPageClient';
-import { fetchBySlug, fetchPageBlocks, notion } from '@/lib/notion';
+import { NotionRenderer } from "@notion-render/client";
+import hljsPlugin from "@notion-render/hljs-plugin";
+import bookmarkPlugin from "@notion-render/bookmark-plugin";
+import BlogPageClient from "./BlogPageClient";
+import {
+  fetchBySlug,
+  fetchPageBlocks,
+  notion,
+  NotionPage,
+} from "@/lib/notion";
 
 // TypeScript type for the component props
 type BlogPageProps = {

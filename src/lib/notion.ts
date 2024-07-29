@@ -1,6 +1,5 @@
-import React from 'react';
 import { Client } from "@notionhq/client";
-import { PageObjectResponse, BlockObjectResponse } from "@notionhq/client/build/src/api-endpoints";
+import { BlockObjectResponse, PageObjectResponse, PartialPageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
 
 // Initialize the Notion client with the auth token
 export const notion = new Client({
@@ -46,7 +45,8 @@ const isNotionPage = (page: any): page is NotionPage => {
 };
 
 // Fetch pages
-export const fetchPages = React.cache(async (): Promise<NotionPage[]> => {
+// Fetch pages
+export const fetchPages = async () => {
   const response = await notion.databases.query({
     database_id: process.env.NEXT_PUBLIC_NOTION_DATABASE_ID!,
     filter: {
@@ -57,12 +57,14 @@ export const fetchPages = React.cache(async (): Promise<NotionPage[]> => {
     },
   });
 
-  // Filter and map results to ensure they match NotionPage interface
-  return response.results.filter(isNotionPage) as any
-});
+  console.log('Fetched pages:', response.results); // Log fetched pages
+
+  return response.results as any;
+};
+
 
 // Fetch page by slug
-export const fetchBySlug = async (slug: string): Promise<NotionPage | undefined> => {
+export const fetchBySlug = async (slug: string) => {
   const response = await notion.databases.query({
     database_id: process.env.NEXT_PUBLIC_NOTION_DATABASE_ID!,
     filter: {
@@ -73,7 +75,6 @@ export const fetchBySlug = async (slug: string): Promise<NotionPage | undefined>
     },
   });
 
-  // Narrow the type before casting
   const page = response.results[0];
   if (isNotionPage(page)) {
     return page;
@@ -82,9 +83,9 @@ export const fetchBySlug = async (slug: string): Promise<NotionPage | undefined>
 };
 
 // Fetch page blocks
-export const fetchPageBlocks = async (pageID: string): Promise<BlockObjectResponse[]> => {
+export const fetchPageBlocks = async (pageID: string) => {
   const response = await notion.blocks.children.list({
     block_id: pageID,
   });
-  return response.results as BlockObjectResponse[];
+  return response.results as any;
 };

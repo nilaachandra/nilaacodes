@@ -57,14 +57,14 @@ const BlogPageClient = ({ post, html, blocks }: BlogPageClientProps) => {
 
   // Increment view count after 7 seconds
   useEffect(() => {
-    axios
-      .post("/api/incrementViews", { pageId: post.id })
-      .then((response) => {
-        console.log("Views incremented:", response.data);
-      })
-      .catch((error) => {
+    const incrementViews = async () => {
+      try {
+        await axios.post("/api/incrementViews", { pageId: post.id });
+      } catch (error) {
         console.error("Error incrementing views:", error);
-      });
+      }
+    };
+    incrementViews();
   }, [post.id]);
 
   return (
