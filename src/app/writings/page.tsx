@@ -21,7 +21,7 @@ const BlogLinks = async () => {
       variants={containerVariants}
       className="w-full min-h-[60vh] flex flex-col"
     >
-      <MotionHeader variants={childVariants} className="">
+      <MotionHeader variants={childVariants} className="mb-3">
         <h1 className="font-bold text-2xl">My Writings</h1>
       </MotionHeader>
       {posts.map((post: any, index: number) => {
@@ -34,7 +34,7 @@ const BlogLinks = async () => {
         const views = post.properties.Views.number || 0;
 
         return (
-          <MotionHeader key={index} variants={childVariants} className="">
+          <MotionHeader key={index} variants={childVariants} className="mb-2">
             <BlogPostLink
               slug={slug}
               index={index}

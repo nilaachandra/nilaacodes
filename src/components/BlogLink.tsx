@@ -27,9 +27,7 @@ const BlogLink: React.FC<BlogLinkProps> = ({ slug, index, title, createdDate, de
       <p className="dark:text-zinc-400 text-zinc-600">
         {description}
       </p>
-      <p className="dark:text-zinc-400 text-zinc-600 text-sm">
-        {views === null ? 0 : views} views
-      </p>
+      
     </Link>
   );
 };
