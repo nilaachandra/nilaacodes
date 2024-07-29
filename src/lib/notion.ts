@@ -46,7 +46,7 @@ const isNotionPage = (page: any): page is NotionPage => {
 
 // Fetch pages
 // Fetch pages
-export const fetchPages = async () => {
+export const fetchPages = async ()  => {
   const response = await notion.databases.query({
     database_id: process.env.NEXT_PUBLIC_NOTION_DATABASE_ID!,
     filter: {
@@ -64,7 +64,7 @@ export const fetchPages = async () => {
 
 
 // Fetch page by slug
-export const fetchBySlug = async (slug: string) => {
+export const fetchBySlug = async (slug: string): Promise<NotionPage | undefined> => {
   const response = await notion.databases.query({
     database_id: process.env.NEXT_PUBLIC_NOTION_DATABASE_ID!,
     filter: {
@@ -76,16 +76,16 @@ export const fetchBySlug = async (slug: string) => {
   });
 
   const page = response.results[0];
-  if (isNotionPage(page)) {
-    return page;
+  if (page) {
+    return page as any;
   }
   return undefined;
 };
 
 // Fetch page blocks
-export const fetchPageBlocks = async (pageID: string) => {
+export const fetchPageBlocks = async (pageID: string): Promise<BlockObjectResponse[]> => {
   const response = await notion.blocks.children.list({
     block_id: pageID,
   });
-  return response.results as any;
+  return response.results as BlockObjectResponse[];
 };

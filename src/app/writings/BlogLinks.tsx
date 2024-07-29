@@ -1,17 +1,20 @@
+// app/writings/page.tsx
 import { format } from "date-fns";
 import { enIN } from "date-fns/locale";
 import { MotionHeader, childVariants, containerVariants } from "@/components/MotionDiv";
 import BlogPostLink from "@/components/BlogLink";
-import { fetchPages } from "@/lib/notion";
+import { fetchPages, NotionPage } from "@/lib/notion";
 
 // Helper function to format the date
 const formatDate = (date: string): string => {
   return format(new Date(date), "do MMMM yyyy", { locale: enIN });
 };
 
-// Server Component for fetching and rendering blog post links
+// Fetch data and specify ISR revalidation interval
+export const revalidate = 60; // Regenerate the page every 60 seconds
+
 const BlogLinks = async () => {
-  const posts = await fetchPages();
+  const posts: NotionPage[] = await fetchPages();
 
   return (
     <MotionHeader
@@ -23,7 +26,7 @@ const BlogLinks = async () => {
       <MotionHeader variants={childVariants} className="">
         <h1 className="font-bold text-2xl">My Writings</h1>
       </MotionHeader>
-      {posts.map((post: any, index:number) => {
+      {posts.map((post: NotionPage, index: number) => {
         const title = post.properties.Title.title?.[0].plain_text || "No Title";
         const slug = post.properties.Slug.rich_text?.[0].plain_text || "no-slug";
         const description = post.properties.Description.rich_text?.[0].plain_text || "No Description";
