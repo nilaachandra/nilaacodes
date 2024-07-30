@@ -1,72 +1,75 @@
-import { ReactNode } from "react"
-import { LuGithub, LuLink } from "react-icons/lu"
-import { SiNextdotjs } from "react-icons/si"
+import Image from "next/image";
+import { ReactNode } from "react";
+import { LuGithub, LuLink } from "react-icons/lu";
+import Status from "./Status";
 
 interface CardProps {
-    children: ReactNode;
-    title?: string;
-    description?: string;
-    openSource?: boolean;
-    personal?: boolean;
-    linkURL?: string;
-    githubURL?: string;
-    building?: string;
-    running?: boolean;
-    acquired?: boolean;
-    discontinued?: boolean;
+  children?: ReactNode;
+  image?: string;
+  title?: string;
+  description?: string;
+  linkURL?: string;
+  githubURL?: string;
+  status: Status;
+  skills: string[];
 }
-const ProjectCard = ( ) => {
+
+const ProjectCard: React.FC<CardProps> = ({
+  children,
+  image,
+  title,
+  description,
+  linkURL,
+  githubURL,
+  status,
+  skills,
+}) => {
   return (
-    <div className="project border dark:border-white border-black p-3 rounded-lg">
-        <div className="title flex justify-between items-center">
-          <div className="flex items-center gap-2">
-            <h1 className="text-xl font-bold">{ }</h1>
-            <span
-             className="cursor-pointer transition-all duration-200 
-             hover:dark:bg-white hover:dark:text-black hover:bg-black
-              hover:text-white border border-black dark:border-white px-2 text-sm rounded-md p-0.5"
-            >
-              Open Source
-            </span>
-            <span
-              className="cursor-pointer transition-all duration-200 
-             hover:dark:bg-white hover:dark:text-black hover:bg-black
-              hover:text-white border border-black dark:border-white px-2 text-sm rounded-md p-0.5"
-            >
-              Personal
-            </span>
-          </div>
-          <div className="div flex items-center gap-3">
-            <a href="" className="text-blue-700">
-              <LuLink size={20} />
-            </a>
-            <a href="" className="">
-              <LuGithub size={20} />
-            </a>
+    <div className="bg-zinc-200/50 dark:bg-zinc-900 cursor-pointer p-2 rounded-md">
+      <div className="flex flex-col gap-0.5">
+        <div className="flex items-center h-full gap-3">
+          <Image
+            src={image || "/default-image.png"} // Use a default image if image is not provided
+            height={65}
+            width={65}
+            alt={title || "Project Image"} // Provide a meaningful alt text
+            className="rounded-md"
+          />
+          <div className="w-[647px]">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <h1 className="font-semibold text-xl">{title}</h1>
+                <Status status={status} />
+              </div>
+              <div className="flex items-center gap-3">
+                {linkURL && (
+                  <a href={linkURL} target="_blank" aria-label="Project Link">
+                    <LuLink size={20} />
+                  </a>
+                )}
+                {githubURL && (
+                  <a href={githubURL} target="_blank" aria-label="GitHub Repository">
+                    <LuGithub size={20} />
+                  </a>
+                )}
+              </div>
+            </div>
+            <p className="text-sm leading-none mt-2">{description}</p>
           </div>
         </div>
-        <p>
-          27 Days is a generative AI powered gamified platform where you can
-          start your journey of getting rid from an addiction you have.
-        </p>
-        <p className="text-sm">
-          Status: <span>Building</span>
-        </p>
-
-        <div className="skills flex gap-2 flex-wrap mt-2">
-        <div
-          className="cursor-pointer transition-all duration-200 
-             hover:dark:bg-white hover:dark:text-black hover:bg-black
-              hover:text-white flex items-center justify-center gap-1 border border-black dark:border-white px-2 rounded-md lg:text-base text-sm"
-        >
-          <SiNextdotjs size={18} />
-          <p className="tracking-tight leading-normal">Next JS</p>
-        </div>
-
-     
+        <div className="flex gap-2 text-xs mt-2 w-full flex-wrap">
+          {skills.map((skill, index) => (
+            <span
+              key={index}
+              className="dark:bg-zinc-700 bg-zinc-300 rounded-sm px-1 py-0.5"
+            >
+              {skill}
+            </span>
+          ))}
         </div>
       </div>
-  )
-}
+    </div>
+  );
+};
 
-export default ProjectCard
+export default ProjectCard;

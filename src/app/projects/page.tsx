@@ -1,11 +1,45 @@
-import React from 'react'
+import {
+  childVariants,
+  containerVariants,
+  MotionHeader,
+} from "@/components/MotionDiv";
+import ProjectCard from "@/components/ProjectCard";
+import projects from "@/staticdata/projects";
+import React from "react";
 
 const Projects = () => {
   return (
-    <div className='w-full min-h-[60vh] flex items-center font-bold text-xl justify-center'>
-        Building
-    </div>
-  )
-}
+    <MotionHeader
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+      className="w-full min-h-[60vh]"
+    >
+      <MotionHeader variants={childVariants} className="flex items-center justify-between">
+        <h1 className="font-bold text-2xl">My Projects</h1>
+        <a href="https://github.com/nilaachandra?tab=repositories" target="_blank" className="underline text-blue-600">More on Github</a>
+      </MotionHeader>
+      <div className="flex flex-col gap-3 mt-4">
+        {projects.map((project) => (
+          <MotionHeader
+            variants={childVariants}
+            className="flex flex-col gap-2"
+            key={project.id}
+          >
+            <ProjectCard
+              skills={project.skills}
+              status={project.status}
+              title={project.title}
+              githubURL={project.githubURL}
+              linkURL={project.linkURL}
+              description={project.description}
+              image={project.image}
+            />
+          </MotionHeader>
+        ))}
+      </div>
+    </MotionHeader>
+  );
+};
 
-export default Projects
+export default Projects;
