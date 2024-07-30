@@ -116,7 +116,7 @@ interface Project {
   {
     id: 8,
     image: "https://uploads-ssl.webflow.com/5f2429f172d117fcee10e819/605c62f4c78c4ba46a1268be_avatar-1-p-2000.jpeg",
-    title: "Niccollo Miranda - clone",
+    title: "Niccollo Miranda",
     description: "A portfolio clone of a famous designer Niccollo Miranda",
     githubURL:
       "https://github.com/nilaachandra/Niccolo-MIranda-Portfolio-Clone",
@@ -127,7 +127,7 @@ interface Project {
   {
     id: 9,
     image: "/coffee.png",
-    title: "Coffeehubb - Relive Coffee",
+    title: "Coffeehubb",
     description: "My first major web dev project",
     githubURL: "https://github.com/nilaachandra/CoffeeHubb",
     linkURL: "https://coffeehubb.vercel.app/",
