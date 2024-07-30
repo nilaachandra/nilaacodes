@@ -20,7 +20,7 @@ interface Project {
     description:
       "Generate 100% engagement guaranteed questions to get more engagements. Click on generate, copy, tweet and see your Twitter engagements go brrrr 🚀",
     githubURL: "https://github.com/nilaachandra/silly-questions",
-    linkURL: "/silly.png",
+    linkURL: "https://sillyquestions.vercel.app",
     skills: ["Next JS", "TypeScript", "Tailwind", "Mistral AI", "ShadCn"],
     status: "running",
   },
