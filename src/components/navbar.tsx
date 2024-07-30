@@ -32,7 +32,7 @@ const Navbar = () => {
 
   return (
     <>
-      <header className="w-full rounded-md p-2">
+      <header className="w-full rounded-md py-2">
         <div className="flex justify-between items-center ">
           <div className="h-10 w-10 p-0.5 border-2 justify-center bg-black dark:bg-white flex items-center dark:border-white border-black rounded-md">
             {mounted &&
