@@ -96,7 +96,7 @@ const BlogPageClient = ({ post, html, blocks }: BlogPageClientProps) => {
       </header>
       <MotionHeader variants={childVariants} className="">
         <article
-          className="prose leading-tight dark:text-white text-black mt-3"
+          className="prose prose-a:text-blue-600 leading-tight dark:text-white text-black mt-3"
           dangerouslySetInnerHTML={{ __html: html }}
         />
 

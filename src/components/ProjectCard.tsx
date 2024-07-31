@@ -26,7 +26,7 @@ const ProjectCard: React.FC<CardProps> = ({
 }) => {
   return (
     <div className="bg-zinc-200/50 dark:bg-zinc-900 cursor-pointer p-2 rounded-md">
-      <div className="flex flex-col gap-0.5">
+      <div className="flex flex-col">
         <div className="flex items-center h-full gap-3">
           <Image
             src={image || "/default-image.png"} // Use a default image if image is not provided
@@ -38,23 +38,23 @@ const ProjectCard: React.FC<CardProps> = ({
           <div className="w-[647px]">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <h1 className="font-semibold text-xl">{title}</h1>
+                <h1 className="font-semibold lg:text-xl text-base leading-none">{title}</h1>
                 <Status status={status} />
               </div>
               <div className="flex items-center gap-3">
                 {linkURL && (
-                  <a href={linkURL} target="_blank" aria-label="Project Link">
-                    <LuLink size={20} />
+                  <a href={linkURL} target="_blank" aria-label="Project Link" className="text-blue-600">
+                    <LuLink size={18} />
                   </a>
                 )}
                 {githubURL && (
                   <a href={githubURL} target="_blank" aria-label="GitHub Repository">
-                    <LuGithub size={20} />
+                    <LuGithub size={18} />
                   </a>
                 )}
               </div>
             </div>
-            <p className="text-sm leading-none mt-2">{description}</p>
+            <p className="lg:text-sm text-xs leading-none mt-2">{description}</p>
           </div>
         </div>
         <div className="flex gap-2 text-xs mt-2 w-full flex-wrap">

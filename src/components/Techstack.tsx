@@ -9,7 +9,7 @@ const Techstack = () => {
           <div
             key={skill.skillName}
             className="cursor-pointer transition-all duration-200 
-             dark:bg-zinc-900 bg-zinc-300 flex items-center justify-center gap-1 py-0.5 px-1.5 rounded-md text-sm"
+             dark:bg-zinc-800 bg-zinc-300 flex items-center justify-center gap-1 py-0.5 px-1.5 rounded-md text-sm"
           >
             {skill.skillIcon}
             <p className="tracking-tight leading-normal">{skill.skillName}</p>
