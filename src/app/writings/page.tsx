@@ -25,6 +25,7 @@ const BlogLinks = async () => {
         <h1 className="font-bold text-2xl">My Writings</h1>
       </MotionHeader>
       {posts.map((post: any, index: number) => {
+        const emoji = post.icon.emoji
         const title = post.properties.Title.title?.[0].plain_text || "No Title";
         const slug = post.properties.Slug.rich_text?.[0].plain_text || "no-slug";
         const description = post.properties.Description.rich_text?.[0].plain_text || "No Description";
@@ -42,6 +43,7 @@ const BlogLinks = async () => {
               createdDate={createdDate}
               description={description}
               views={views}
+              emoji={emoji}
             />
           </MotionHeader>
         );

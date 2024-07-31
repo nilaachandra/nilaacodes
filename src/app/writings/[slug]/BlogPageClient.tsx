@@ -55,7 +55,7 @@ const BlogPageClient = ({ post, html, blocks }: BlogPageClientProps) => {
   const createdDate = formatDate(post.properties.Created.created_time!);
   const views = post.properties.Views.number;
 
-  // Increment view count after 7 seconds
+  // Increment view count after every page visit
   useEffect(() => {
     const incrementViews = async () => {
       try {
@@ -81,25 +81,25 @@ const BlogPageClient = ({ post, html, blocks }: BlogPageClientProps) => {
         <IoIosArrowBack size={20} />
         Back to all writings
       </Link>
-      <header className="mb-3 leading-none ">
-        <MotionHeader variants={childVariants} className="">
-          <h1 className="text-2xl font-bold dark:text-white text-black">
-            {title}
-          </h1>
+
+      <header className="mb-3 leading-none">
+        <MotionHeader variants={childVariants}>
+          <h1 className="text-2xl font-bold">{title}</h1>
         </MotionHeader>
 
-        <MotionHeader variants={childVariants} className="">
+        <MotionHeader variants={childVariants}>
           <p className="text-sm text-gray-500 dark:text-gray-400">
             {createdDate} • {views === null ? 0 : views} views • {readingTime}
           </p>
         </MotionHeader>
       </header>
-      <MotionHeader variants={childVariants} className="">
+
+      <MotionHeader variants={childVariants}>
         <article
-          className="prose prose-a:text-blue-600 leading-tight dark:text-white text-black mt-3"
+          className="prose dark:prose-invert prose-a:text-blue-600 text-black dark:text-white leading-tight mt-3"
           dangerouslySetInnerHTML={{ __html: html }}
         />
-
+        
         <Link
           className="flex hover:underline items-center gap-1 my-3"
           href={"/writings"}
