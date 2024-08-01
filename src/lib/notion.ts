@@ -45,22 +45,30 @@ const isNotionPage = (page: any): page is NotionPage => {
 };
 
 // Fetch pages
-// Fetch pages
-export const fetchPages = async ()  => {
-  const response = await notion.databases.query({
-    database_id: process.env.NEXT_PUBLIC_NOTION_DATABASE_ID!,
-    filter: {
-      property: "Status",
-      status: {
-        equals: "Live",
+
+export const fetchPages = async () => {
+  try {
+    const response = await notion.databases.query({
+      database_id: process.env.NEXT_PUBLIC_NOTION_DATABASE_ID!,
+      filter: {
+        property: "Status",
+        status: {
+          equals: "Live",
+        },
       },
-    },
-  });
+    });
 
-  console.log('Fetched pages:', response.results); // Log fetched pages
+    console.log('Fetched pages:', response.results); // Log fetched pages
 
-  return response.results as any;
+
+
+    return response.results as any;
+  } catch (error) {
+    console.error('Error fetching pages:', error);
+  }
 };
+
+
 
 
 // Fetch page by slug

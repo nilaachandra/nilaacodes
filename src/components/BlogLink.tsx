@@ -8,7 +8,7 @@ type BlogLinkProps = {
   createdDate: string;
   description: string;
   views: number | null;
-  emoji: string;
+  emoji?: string;
 };
 
 const BlogLink: React.FC<BlogLinkProps> = ({
