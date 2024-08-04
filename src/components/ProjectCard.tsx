@@ -54,7 +54,7 @@ const ProjectCard: React.FC<CardProps> = ({
                 )}
               </div>
             </div>
-            <p className="lg:text-sm text-xs leading-none mt-2">{description}</p>
+            <p className="lg:text-sm text-sm ">{description}</p>
           </div>
         </div>
         <div className="flex gap-2 text-xs mt-2 w-full flex-wrap">
