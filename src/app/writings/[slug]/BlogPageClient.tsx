@@ -84,7 +84,7 @@ const BlogPageClient = ({ post, html, blocks }: BlogPageClientProps) => {
 
       <header className="mb-3 leading-none">
         <MotionHeader variants={childVariants}>
-          <h1 className="text-2xl font-bold">{title}</h1>
+          <h1 className="text-2xl leading-none font-bold">{title}</h1>
         </MotionHeader>
 
         <MotionHeader variants={childVariants}>
