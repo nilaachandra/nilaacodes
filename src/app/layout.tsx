@@ -20,24 +20,18 @@ const bricolageRegular = Bricolage_Grotesque({
 
 export const metadata: Metadata = {
   title: "Nilaacodes",
-  description: "Nilaa's Portfolio",
+  description: "my corner of the internet",
   icons: {
     icon: ["nilaacodes-dark.png"],
     shortcut: ["nilaacodes-dark.png"],
   },
   openGraph: {
     title: "Nilaacodes",
-    description: "Nilaacodes - Portfolio",
+    description: "my corner of the internet",
     url: "https://nilaacodes.vercel.app",
     siteName: "Nilaacodes",
     images: [
-      { url: "/nilaacodes-dark.png", width: 630, height: 630 },
-      {
-        url: "/nilaacodes-dark.png",
-        width: 630,
-        height: 630,
-        alt: "Nilaacodes",
-      },
+      { url: "/nilaacodesog.png", width: 1200, height: 630 }
     ],
     locale: "en-IN",
     type: "website",

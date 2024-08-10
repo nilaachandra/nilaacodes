@@ -2,19 +2,30 @@ import Status from "@/components/Status";
 import { ReactNode } from "react";
 
 interface Project {
-    id: number;
-    image: string;
-    title: string;
-    description: string;
-    linkURL: string;
-    githubURL: string;
-    status: 'building' | 'running' | 'discontinued'; // Use string literal types
-    skills: string[];
-  }
-  
-  const projects: Project[] = [
+  id: number;
+  image: string;
+  title: string;
+  description: string;
+  linkURL: string;
+  githubURL: string;
+  status: "building" | "running" | "discontinued"; // Use string literal types
+  skills: string[];
+}
+
+const projects: Project[] = [
   {
-    id: 1,
+    id: 2,
+    image: "/spotlistify.png",
+    title: "Spotlistify",
+    description:
+      "A directory of Spotify playlists",
+    githubURL: "https://github.com/nilaachandra/spotlistify",
+    linkURL: "https://spotlistify.vercel.app",
+    skills: ["Next JS", "TypeScript", "Tailwind", "ShadCn", "Tanstack Query", "PostgreSQL", "Prisma", "NextAuth"],
+    status: "building",
+  },
+  {
+    id: 2,
     image: "/silly.png",
     title: "Silly Questions",
     description:
@@ -25,7 +36,7 @@ interface Project {
     status: "running",
   },
   {
-    id: 2,
+    id: 3,
     image: "/unicorn.png",
     title: "27Startups",
     description:
@@ -42,7 +53,7 @@ interface Project {
     status: "running",
   },
   {
-    id: 3,
+    id: 4,
     image:
       "https://github.com/nilaachandra/twentysevendays/blob/master/public/27dayslogo.png?raw=true",
     title: "27days.life",
@@ -62,7 +73,18 @@ interface Project {
     status: "building",
   },
   {
-    id: 4,
+    id: 1,
+    image: "/animepfp.jpg",
+    title: "Minimalio",
+    description:
+      "A portfolio template that is beginner friendly, minimal and responsive, made using only html and css, just like those of the cracked devs.",
+    githubURL: "https://github.com/nilaachandra/minimalio",
+    linkURL: "https://nilaachandra.github.io/minimalio",
+    skills: ["HTML", "CSS"],
+    status: "running",
+  },
+  {
+    id: 5,
     image: "/rocket.png",
     title: "Another Boilerplate",
     description: "A Next Js boilerplate starter with many features",
@@ -80,7 +102,7 @@ interface Project {
     status: "building",
   },
   {
-    id: 5,
+    id: 6,
     image:
       "https://raw.githubusercontent.com/nilaachandra/Brainwave-Landing-Page/9e307e6bc1e0bc01caebb17fa629bdc138554402/src/assets/brainwave-symbol.svg",
     title: "Brainwave",
@@ -92,7 +114,7 @@ interface Project {
     status: "running",
   },
   {
-    id: 6,
+    id: 7,
     image: "https://logomoji.vercel.app/assets/LogoMojii-DWCKwUEl.png",
     title: "Logomoji",
     description:
@@ -103,8 +125,9 @@ interface Project {
     status: "running",
   },
   {
-    id: 7,
-    image: "https://github.com/nilaachandra/Colour_Picker/blob/main/src/assets/Cbnlogo.png?raw=true",
+    id: 8,
+    image:
+      "https://github.com/nilaachandra/Colour_Picker/blob/main/src/assets/Cbnlogo.png?raw=true",
     title: "ColorsByNilaa",
     description:
       "The Superfast, Easy to Use, Lightweight and Minimal Color Picker. Create the color you like, pick it and use it on your CSS",
@@ -114,8 +137,9 @@ interface Project {
     status: "running",
   },
   {
-    id: 8,
-    image: "https://uploads-ssl.webflow.com/5f2429f172d117fcee10e819/605c62f4c78c4ba46a1268be_avatar-1-p-2000.jpeg",
+    id: 9,
+    image:
+      "https://uploads-ssl.webflow.com/5f2429f172d117fcee10e819/605c62f4c78c4ba46a1268be_avatar-1-p-2000.jpeg",
     title: "Niccollo Miranda",
     description: "A portfolio clone of a famous designer Niccollo Miranda",
     githubURL:
@@ -125,7 +149,7 @@ interface Project {
     status: "running",
   },
   {
-    id: 9,
+    id: 10,
     image: "/coffee.png",
     title: "Coffeehubb",
     description: "My first major web dev project",
@@ -136,4 +160,4 @@ interface Project {
   },
 ];
 
-export default projects
+export default projects;
