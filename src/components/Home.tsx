@@ -21,16 +21,18 @@ const Homepage = () => {
           className="hello grid grid-cols-3  gap-3 items-center"
         >
           <div className="desc w-full col-span-2">
-            <h1 className="font-bold lg:text-3xl text-lg">
-              Hey, I&apos;m <span className="text-blue-700">Nilaa</span>{" "}
-              Laishram 👋
-            </h1>
+            <div className="flex items-center gap-0.5">
+              <h1 className="font-bold lg:text-3xl text-lg">
+                <span className="text-blue-700">Nilaa</span> Laishram
+              </h1>
+              <Image src={'/ragingpumpkin.gif'} height={32} width={32} alt="raging pumpkin"/>
+            </div>
             <ul className="list-inside">
               <li className="tracking-tight">
-                <span className="mr-3">🚀</span>
-                <span className="font-bold italic">Full Stack Developer</span> and{" "}
-                <span className="font-bold italic">Freelancer</span> who loves to build
-                and ship stuffs.
+                
+                <span className="font-bold italic">
+                  Next Js Developer, Freelancer & UI Designer
+                </span>
               </li>
             </ul>
           </div>
@@ -53,24 +55,30 @@ const Homepage = () => {
             </li>
             <li>
               <span className="mr-2">🌍</span>Got a background in{" "}
-              <span className="font-bold italic text-blue-700">Geology</span> and{" "}
-              <span className="font-bold italic text-blue-700">Mathematics</span>.
+              <span className="font-bold italic text-blue-700">Geology</span>{" "}
+              and{" "}
+              <span className="font-bold italic text-blue-700">
+                Mathematics
+              </span>
+              .
             </li>
             <li>
               <span className="mr-2">⚛️</span>Mainly working with{" "}
               <span className="font-bold italic text-blue-700">React</span> and{" "}
-              <span className="font-bold italic text-blue-700">Next JS</span> with{" "}
-              <span className="font-bold italic text-blue-700">TypeScript</span>.
+              <span className="font-bold italic text-blue-700">Next JS</span>{" "}
+              with{" "}
+              <span className="font-bold italic text-blue-700">TypeScript</span>
+              .
             </li>
             <li>
               <span className="mr-2">🥺</span>Open to opportunities and
               freelancing gigs.
             </li>
             <li>
-              <span className="mr-2">⚽♟️</span>Also into{" "}
-              <span className="font-bold italic text-blue-700">Football</span>, and{" "}
-              <span className="font-bold italic text-blue-700">Chess</span>.
+              <span className="mr-2">⚽</span>Also into{" "}
+              <span className="font-bold italic text-blue-700">Football</span>
             </li>
+            <li className="italic font-semibold">Hala Madrid y Nada Mas 🤍!</li>
           </ul>
           <Wigglyline />
         </MotionDiv>
