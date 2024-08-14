@@ -25,7 +25,7 @@ const Homepage = () => {
               <h1 className="font-bold lg:text-3xl text-lg">
                 <span className="text-blue-700">Nilaa</span> Laishram
               </h1>
-              <Image className="absolute right-[44%] bottom-[5px]" src={'/ragingpumpkin.gif'} height={32} width={32} alt="raging pumpkin"/>
+              <Image className="absolute lg:right-[44%] right-[37.5%] bottom-[4px]" src={'/ragingpumpkin.gif'} height={32} width={32} alt="raging pumpkin"/>
             </div>
             <ul className="list-inside">
               <li className="tracking-tight">
