@@ -5,7 +5,6 @@ import ThemeToggle from "./ThemeToggle";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Link } from "next-view-transitions";
-import { LuHome } from "react-icons/lu";
 
 type NavLink = {
   linkName: string;

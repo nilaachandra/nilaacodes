@@ -21,11 +21,10 @@ const Homepage = () => {
           className="hello grid grid-cols-3  gap-3 items-center"
         >
           <div className="desc w-full col-span-2">
-            <div className="flex items-center gap-0.5 relative">
-              <h1 className="font-bold lg:text-3xl text-lg">
+            <div className="flex items-center gap-0.5">
+              <h1 className="font-bold text-3xl">
                 <span className="text-blue-700">Nilaa</span> Laishram
               </h1>
-              <Image className="absolute lg:right-[44%] right-[37.5%] bottom-[4px]" src={'/ragingpumpkin.gif'} height={32} width={32} alt="raging pumpkin"/>
             </div>
             <ul className="list-inside">
               <li className="tracking-tight">
