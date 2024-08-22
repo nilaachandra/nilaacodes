@@ -17,9 +17,9 @@ const navLinks: { [key: string]: NavLink } = {
   "/about": { linkName: "About", href: "/about" },
   "/projects": { linkName: "Projects", href: "/projects" },
   "/writings": { linkName: "Writings", href: "/writings" },
+  "/timeline": { linkName: "Timeline", href: "/timeline" },
   "/guestbook": { linkName: "Guestbook", href: "/guestbook" },
   "/shelf": { linkName: "Shelf", href: "/shelf" },
-  "/timeline": { linkName: "Timeline", href: "/timeline" },
 };
 
 const Navbar = () => {

@@ -8,10 +8,9 @@ import { GeistSans } from "geist/font/sans";
 import { ViewTransitions } from "next-view-transitions";
 import dynamic from "next/dynamic";
 import { PHProvider } from "./Providers";
-import { AppProgressBar as ProgressBar } from "next-nprogress-bar";
 import ProgressProvider from "./ProgressProvider";
 
-const inter = Inter({ subsets: ["latin"], weight: ["500", "800"] });
+const inter = Inter({ subsets: ["latin"], weight: ["400", "800"] });
 
 const bricolageRegular = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -30,9 +29,7 @@ export const metadata: Metadata = {
     description: "my corner of the internet",
     url: "https://nilaacodes.vercel.app",
     siteName: "Nilaacodes",
-    images: [
-      { url: "/nilaacodesog.png", width: 1200, height: 630 }
-    ],
+    images: [{ url: "/nilaacodesog.png", width: 1200, height: 630 }],
     locale: "en-IN",
     type: "website",
   },
