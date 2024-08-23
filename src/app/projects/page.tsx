@@ -18,7 +18,7 @@ const Projects = () => {
       className="w-full min-h-[60vh]"
     >
       <MotionDiv variants={childVariants} className="mb-4">
-        <h2 className="text-2xl mb-2 font-bold">Experience 💼</h2>
+        <h2 className="text-2xl mb-2 font-bold">Experience</h2>
         <Experience />
       </MotionDiv>
       <MotionHeader
