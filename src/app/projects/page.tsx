@@ -1,6 +1,8 @@
+import Experience from "@/components/Experience";
 import {
   childVariants,
   containerVariants,
+  MotionDiv,
   MotionHeader,
 } from "@/components/MotionDiv";
 import ProjectCard from "@/components/ProjectCard";
@@ -15,9 +17,22 @@ const Projects = () => {
       variants={containerVariants}
       className="w-full min-h-[60vh]"
     >
-      <MotionHeader variants={childVariants} className="flex items-center justify-between">
+      <MotionDiv variants={childVariants} className="mb-4">
+        <h2 className="text-2xl mb-2 font-bold">Experience 💼</h2>
+        <Experience />
+      </MotionDiv>
+      <MotionHeader
+        variants={childVariants}
+        className="flex items-center justify-between"
+      >
         <h1 className="font-bold text-2xl">My Projects</h1>
-        <a href="https://github.com/nilaachandra?tab=repositories" target="_blank" className="underline text-blue-600">More on Github</a>
+        <a
+          href="https://github.com/nilaachandra?tab=repositories"
+          target="_blank"
+          className="underline text-blue-600"
+        >
+          More on Github
+        </a>
       </MotionHeader>
       <div className="flex flex-col gap-3 mt-4">
         {projects.map((project) => (

@@ -11,6 +11,7 @@ import {
 } from "@/components/MotionDiv";
 import MyWritings from "./MyWritings";
 import MyLocation from "./MyLocation";
+import Experience from "./Experience";
 
 const Homepage = () => {
   return (
@@ -86,6 +87,12 @@ const Homepage = () => {
         <MotionDiv variants={childVariants}>
           <Wigglyline />
           <Techstack />
+          <Wigglyline />
+        </MotionDiv>
+        <MotionDiv variants={childVariants}>
+          <h2 className="text-lg mb-2 font-bold">Experience 💼</h2>
+
+          <Experience />
           <Wigglyline />
         </MotionDiv>
         <MotionDiv variants={childVariants}>

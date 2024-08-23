@@ -14,7 +14,7 @@ type NavLink = {
 const navLinks: { [key: string]: NavLink } = {
   "/": { linkName: "Home", href: "/" },
   "/about": { linkName: "About", href: "/about" },
-  "/projects": { linkName: "Projects", href: "/projects" },
+  "/projects": { linkName: "Works", href: "/projects" },
   "/writings": { linkName: "Writings", href: "/writings" },
   "/timeline": { linkName: "Timeline", href: "/timeline" },
   "/guestbook": { linkName: "Guestbook", href: "/guestbook" },
