@@ -18,31 +18,30 @@ const Homepage = () => {
       <section className="w-full">
         <MotionHeader
           variants={childVariants}
-          className="hello grid grid-cols-3  gap-3 items-center"
+          className="flex justify-between gap-3 items-center w-full"
         >
-          <div className="desc w-full col-span-2">
+          <div className="profile justify-center flex items-center">
+            <Image
+              src="https://pbs.twimg.com/profile_images/1822673085717221377/4NVrn3ky_400x400.jpg"
+              height={120}
+              width={120}
+              className="rounded-full"
+              alt=""
+            />
+          </div>
+          <div className="desc md:w-full   lg:w-full col-span-2">
             <div className="flex items-center gap-0.5">
               <h1 className="font-bold text-3xl">
-                <span className="text-blue-700">Nilaa</span> Laishram
+                <span className="text-blue-700">Nilaa</span> Laishram🎃
               </h1>
             </div>
             <ul className="list-inside">
               <li className="tracking-tight">
-                
                 <span className="font-bold italic">
                   Next Js Developer, Freelancer & UI Designer
                 </span>
               </li>
             </ul>
-          </div>
-          <div className="profile justify-center flex items-center">
-            <Image
-              src="/nilaacodes-pfp2.jpg"
-              height={120}
-              width={120}
-              className="rounded-lg"
-              alt=""
-            />
           </div>
         </MotionHeader>
 
