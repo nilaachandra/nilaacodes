@@ -75,7 +75,7 @@ const Homepage = () => {
             </li>
             <li>
               <span className="mr-2">⚽</span>Also into{" "}
-              <span className="font-bold italic text-blue-700">Football</span>
+              <span className="font-bold italic text-blue-700">Football.</span>
             </li>
             <li className="italic font-semibold">Hala Madrid y Nada Mas 🤍!</li>
           </ul>
