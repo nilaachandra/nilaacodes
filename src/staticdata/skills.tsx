@@ -19,6 +19,7 @@ import {
   SiAdobephotoshop,
   SiReactquery,
   SiShadcnui,
+  SiPrisma,
 } from "react-icons/si";
 
 type Skill = {
@@ -39,6 +40,7 @@ const skills: Skill[] = [
   { skillName: "Supabase", skillIcon: <SiSupabase size={16}/> },
   { skillName: "Firebase", skillIcon: <SiFirebase size={16}/> },
   { skillName: "PostgreSQL", skillIcon: <SiPostgresql size={16}/> },
+  { skillName: "Prisma", skillIcon: <SiPrisma size={16}/> },
   { skillName: "MongoDB", skillIcon: <SiMongodb size={16}/> },
   { skillName: "Shadcn", skillIcon: <SiShadcnui size={16}/> },
 
