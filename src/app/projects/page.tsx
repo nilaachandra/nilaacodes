@@ -39,7 +39,7 @@ const Projects = () => {
           <MotionHeader
             variants={childVariants}
             className="flex flex-col gap-2"
-            key={project.id}
+            key={project.title}
           >
             <ProjectCard
               skills={project.skills}

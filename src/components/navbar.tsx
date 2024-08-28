@@ -1,25 +1,21 @@
 "use client";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import ThemeToggle from "./ThemeToggle";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Link } from "next-view-transitions";
+import ThemeToggle from "./ThemeToggle";
+import AnimatedBackground from "./core/animate-background";
 
-type NavLink = {
-  linkName: string;
-  href: string;
-};
-
-const navLinks: { [key: string]: NavLink } = {
-  "/": { linkName: "Home", href: "/" },
-  "/about": { linkName: "About", href: "/about" },
-  "/projects": { linkName: "Works", href: "/projects" },
-  "/writings": { linkName: "Writings", href: "/writings" },
-  "/timeline": { linkName: "Timeline", href: "/timeline" },
-  "/guestbook": { linkName: "Guestbook", href: "/guestbook" },
-  "/shelf": { linkName: "Shelf", href: "/shelf" },
-};
+const navLinks = [
+  { linkName: "Home", href: "/" },
+  { linkName: "About", href: "/about" },
+  { linkName: "Works", href: "/projects" },
+  { linkName: "Writings", href: "/writings" },
+  { linkName: "Timeline", href: "/timeline" },
+  { linkName: "Guestbook", href: "/guestbook" },
+  { linkName: "Shelf", href: "/shelf" },
+];
 
 const Navbar = () => {
   const { theme } = useTheme();
@@ -32,7 +28,7 @@ const Navbar = () => {
   return (
     <>
       <header className="w-full rounded-md py-2">
-        <div className="flex justify-between items-center ">
+        <div className="flex justify-between items-center">
           <div className="h-10 w-10 p-0.5 border-2 justify-center bg-black dark:bg-white flex items-center dark:border-white border-black rounded-md">
             {mounted &&
               (theme === "dark" ? (
@@ -65,18 +61,27 @@ const Navbar = () => {
           </div>
         </div>
       </header>
-      <div className="link-container sticky top-0 w-full flex items-end gap-x-4 gap-y-2 flex-wrap bg-white dark:bg-black py-4">
-        {Object.entries(navLinks).map(([path, { linkName }]) => (
-          <Link
-            key={path}
-            href={path}
-            className={
-              pathname === path ? "underline font-semibold" : "text-zinc-500"
-            }
-          >
-            {linkName}
-          </Link>
-        ))}
+      <div className="link-container sticky top-0 w-full flex items-end gap-x-2 gap-y-2 flex-wrap bg-white dark:bg-black py-4">
+        <AnimatedBackground
+          defaultValue={pathname}
+          className="rounded-md bg-zinc-300 dark:bg-zinc-700"
+          transition={{
+            ease: "easeInOut",
+            duration: 0.4,
+          }}
+        >
+          {navLinks.map(({ linkName, href }, index) => (
+            <Link
+              key={href}
+              href={href}
+              data-id={href}
+              className={`inline-flex items-center justify-center text-center px-2 ${pathname === href ? "text-zinc-800 dark:text-zinc-50" : "text-zinc-500"
+                }`}
+            >
+              {linkName}
+            </Link>
+          ))}
+        </AnimatedBackground>
       </div>
     </>
   );

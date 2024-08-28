@@ -22,7 +22,7 @@ const projects: Project[] = [
     githubURL: "https://github.com/nilaachandra/spotlistify",
     linkURL: "https://spotlistify.vercel.app",
     skills: ["Next JS", "TypeScript", "Tailwind", "ShadCn", "Tanstack Query", "PostgreSQL", "Prisma", "NextAuth"],
-    status: "building",
+    status: "running",
   },
   {
     id: 2,
@@ -54,11 +54,29 @@ const projects: Project[] = [
   },
   {
     id: 4,
+    image: "https://nextjsmodernlp.vercel.app/_next/static/media/Logo.d5a36fa0.svg",
+    title: "Modern Landing Page",
+    description:
+      "A modern sleek landing page I developed with the design provided by Jan Marshall in one of his videos",
+    githubURL: "https://github.com/nilaachandra/next-js-modern-landing-page",
+    linkURL: "https://nextjsmodernlp.vercel.app/",
+    skills: [
+      "Next Js",
+      "TypeScript",
+      "Tailwind",
+      "Framer Motion",
+      "ShadCn",
+      "Animata UI",
+    ],
+    status: "running",
+  },
+  {
+    id: 4,
     image:
       "https://github.com/nilaachandra/twentysevendays/blob/master/public/27dayslogo.png?raw=true",
     title: "27days.life",
     description:
-      "27 Days is a generative AI powered gamified platform where you can start your journey of getting rid from an addiction you have.",
+      "27 Days is a generative AI powered gamified platform where you can start your journey of getting rid from an addiction you have. Discontinued due to lack of free api keys.",
     githubURL: "https://github.com/nilaachandra/twentysevendays",
     linkURL: "https://27days.vercel.app/",
     skills: [
@@ -70,7 +88,7 @@ const projects: Project[] = [
       "Tanstack Query",
       "ShadCn",
     ],
-    status: "building",
+    status: "discontinued",
   },
   {
     id: 1,
