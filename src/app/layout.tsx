@@ -9,6 +9,7 @@ import { ViewTransitions } from "next-view-transitions";
 import dynamic from "next/dynamic";
 import { PHProvider } from "./Providers";
 import ProgressProvider from "./ProgressProvider";
+import { Toaster } from "sonner";
 
 const inter = Inter({ subsets: ["latin"], weight: ["400", "800"] });
 
@@ -55,6 +56,7 @@ export default function RootLayout({
                 <Footer />
               </Providers>
             </ProgressProvider>
+            <Toaster position="top-center"/>
           </body>
         </PHProvider>
       </html>
