@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Nilaacodes",
     description: "my corner of the internet",
-    url: "https://nilaacodes.vercel.app",
+    url: "https://www.nilaacodes.me",
     siteName: "Nilaacodes",
     images: [{ url: "/nilaacodesog.png", width: 1200, height: 630 }],
     locale: "en-IN",
