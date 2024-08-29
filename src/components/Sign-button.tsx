@@ -101,7 +101,7 @@ export default function SignButton() {
                                 <div className='px-4'>
                                     <h1>Sign here</h1>
                                     <SignatureCanvas />
-                                    <Input type="email" placeholder="Email" className='mt-2 border border-zinc-900'/>
+                                    <Input type="email" placeholder="Email" className='mt-2 border border-zinc-900' />
 
                                 </div>
                                 <div key='close' className='flex justify-between px-4 py-3'>
