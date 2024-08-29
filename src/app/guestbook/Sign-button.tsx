@@ -1,15 +1,16 @@
 'use client';
 import { AnimatePresence, MotionConfig, motion } from 'framer-motion';
 import { useRef, useState, useEffect, useId } from 'react';
-import useClickOutside from '../../hooks/useClickOutside';
+import useClickOutside from '../../../hooks/useClickOutside';
 import { FaArrowLeft, FaSignature } from 'react-icons/fa';
 import SignatureCanvas from './SignatureCanvas';
-import { Input } from './ui/input';
+import { Input } from '../../components/ui/input';
+import { Button } from '@/components/ui/button';
 
 const TRANSITION = {
     type: 'spring',
-    bounce: 0.05,
-    duration: 0.3,
+    bounce: 0.04,
+    duration: 0.2,
 };
 
 export default function SignButton() {
@@ -47,7 +48,7 @@ export default function SignButton() {
 
     return (
         <MotionConfig transition={TRANSITION}>
-            <div className='relative flex items-center mt-3'>
+            <div className='relative flex items-center mt-4'>
                 <motion.button
                     key='button'
                     layoutId={`popover-${uniqueId}`}
@@ -71,7 +72,7 @@ export default function SignButton() {
                         <motion.div
                             ref={formContainerRef}
                             layoutId={`popover-${uniqueId}`}
-                            className='absolute w-[364px] overflow-hidden bg-zinc-300 outline-none dark:bg-zinc-900 dark:text-white text-black'
+                            className='absolute max-w-[712px] overflow-hidden bg-zinc-300 outline-none dark:bg-zinc-800 dark:text-white text-black'
                             style={{
                                 borderRadius: 12,
                             }}
@@ -99,25 +100,21 @@ export default function SignButton() {
                                     onChange={(e) => setNote(e.target.value)}
                                 />
                                 <div className='px-4'>
-                                    <h1>Sign here</h1>
+                                    <div className='w-full grid grid-cols-6 items-center gap-1 my-3'>
+                                        <Input type="email" placeholder="Email" className='border col-span-4 dark:border-zinc-300 border-zinc-950  ' />
+                                        <Button className='col-span-2'>Verify</Button>
+                                    </div>
+                                    <Input type="text" placeholder="Your Name" className='border col-span-4 dark:border-zinc-300 border-zinc-950  ' />
+
+                                </div>
+                                <div className='px-4 mt-2'>
                                     <SignatureCanvas />
-                                    <Input type="email" placeholder="Email" className='mt-2 border border-zinc-900' />
 
                                 </div>
                                 <div key='close' className='flex justify-between px-4 py-3'>
-                                    <button
-                                        type='button'
-                                        className='flex items-center'
-                                        onClick={closeMenu}
-                                        aria-label='Close popover'
-                                    >
-                                        <FaArrowLeft
-                                            size={16}
-                                            className='text-zinc-900 dark:text-zinc-100'
-                                        />
-                                    </button>
-                                    <button
-                                        className='relative ml-1 flex h-8 shrink-0 scale-100 select-none appearance-none items-center justify-center rounded-lg border border-zinc-950/10 bg-transparent px-2 text-sm text-zinc-500 transition-colors hover:bg-zinc-100 hover:text-zinc-800 focus-visible:ring-2 active:scale-[0.98] dark:border-zinc-50/10 dark:text-zinc-50 dark:hover:bg-zinc-800'
+
+                                    <Button
+                                        className='w-full'
                                         type='button'
                                         aria-label='Submit note'
                                         onClick={() => {
@@ -125,8 +122,8 @@ export default function SignButton() {
                                             closeMenu();
                                         }}
                                     >
-                                        Submit Note
-                                    </button>
+                                        Sign
+                                    </Button>
                                 </div>
                             </form>
                         </motion.div>

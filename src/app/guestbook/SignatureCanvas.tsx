@@ -1,7 +1,7 @@
 "use client"
 import React, { useRef, useState, useEffect } from 'react';
 import { toast } from 'sonner';
-import { Button } from './ui/button';
+import { Button } from '../../components/ui/button';
 
 // Define types for our coordinate system and paths
 type Point = [number, number]; // A point is an array of two numbers [x, y]
@@ -28,6 +28,8 @@ const SignatureCanvas: React.FC = () => {
         ctx.lineWidth = 2;
         ctx.lineCap = 'round';
         ctx.strokeStyle = 'black';
+        ctx.imageSmoothingEnabled = true;
+        ctx.imageSmoothingQuality = "high"
       }
     }
   }, []);
@@ -140,17 +142,21 @@ const SignatureCanvas: React.FC = () => {
 
     const canvas = canvasRef.current;
     if (canvas) {
-      canvas.toBlob((blob) => {
-        if (blob) {
-          const url = URL.createObjectURL(blob);
-          const link = document.createElement('a');
-          link.href = url;
-          link.download = 'signature.webp';
-          link.click();
-          URL.revokeObjectURL(url);
-          toast.success("Signature saved successfully!");
-        }
-      }, 'image/webp');
+      // Convert canvas to base64 string
+      const base64Image = canvas.toDataURL('image/png');
+
+      // Create a temporary textarea to copy the base64 string
+      const tempTextArea = document.createElement('textarea');
+      tempTextArea.value = base64Image;
+      document.body.appendChild(tempTextArea);
+      tempTextArea.select();
+      document.execCommand('copy');
+      document.body.removeChild(tempTextArea);
+
+      toast.success("Signature copied as base64 string!");
+
+      // Optional: You can also return the base64 string if you want to use it elsewhere
+      return base64Image;
     }
   };
 
@@ -160,7 +166,7 @@ const SignatureCanvas: React.FC = () => {
         ref={canvasRef}
         width={400}
         height={200}
-        className="border border-gray-300 rounded-lg touch-none bg-white w-full"
+        className="border border-gray-300 rounded-lg bg-white w-full"
         onMouseDown={startDrawing}
         onMouseMove={draw}
         onMouseUp={stopDrawing}
@@ -169,10 +175,10 @@ const SignatureCanvas: React.FC = () => {
         onTouchMove={draw}
         onTouchEnd={stopDrawing}
       />
-      <div className="flex justify-start w-full space-x-2">
-        <Button onClick={clearCanvas}>Clear</Button>
-        <Button onClick={undo}>Undo</Button>
-        <Button onClick={saveSignature}>Save</Button>
+      <div className="flex justify-end w-full space-x-2">
+        <h1 className='text-sm cursor-pointer' onClick={clearCanvas}>Clear</h1>
+        <h1 className='text-sm cursor-pointer' onClick={undo}>Undo</h1>
+        {/* <Button className='' onClick={saveSignature}>Save</Button> */}
       </div>
     </div>
   );
