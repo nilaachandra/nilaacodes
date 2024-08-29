@@ -30,8 +30,8 @@ const ProjectCard: React.FC<CardProps> = ({
         <div className="flex items-center h-full gap-3">
           <Image
             src={image || "/default-image.png"} // Use a default image if image is not provided
-            height={65}
-            width={65}
+            height={64}
+            width={64}
             alt={title || "Project Image"} // Provide a meaningful alt text
             className="rounded-md"
           />

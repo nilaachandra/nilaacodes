@@ -166,7 +166,7 @@ const SignatureCanvas: React.FC = () => {
         ref={canvasRef}
         width={400}
         height={200}
-        className="border border-gray-300 rounded-lg bg-white w-full"
+        className="border touch-none border-gray-300 rounded-lg bg-white w-full"
         onMouseDown={startDrawing}
         onMouseMove={draw}
         onMouseUp={stopDrawing}
