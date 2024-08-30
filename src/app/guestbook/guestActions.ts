@@ -40,6 +40,7 @@ export async function validateEmail(email: string) {
 
 //
 export const submitSignature = async (formData: Signtypes) => {
+    //
     try {
         const response = await db.guestbookEntry.create({
             data: {
