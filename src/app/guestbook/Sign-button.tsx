@@ -1,11 +1,15 @@
 'use client';
 import { AnimatePresence, MotionConfig, motion } from 'framer-motion';
-import { useRef, useState, useEffect, useId } from 'react';
+import { useRef, useState, useEffect, useId, startTransition, useTransition } from 'react';
 import useClickOutside from '../../../hooks/useClickOutside';
-import { FaArrowLeft, FaSignature } from 'react-icons/fa';
+import { FaSignature } from 'react-icons/fa';
 import SignatureCanvas from './SignatureCanvas';
 import { Input } from '../../components/ui/input';
 import { Button } from '@/components/ui/button';
+import { submitSignature, validateEmail } from './guestActions';
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { toast } from 'sonner';
+import { useRouter } from 'next/navigation';
 
 const TRANSITION = {
     type: 'spring',
@@ -15,9 +19,17 @@ const TRANSITION = {
 
 export default function SignButton() {
     const uniqueId = useId();
+    const router = useRouter()
+
     const formContainerRef = useRef<HTMLDivElement>(null);
     const [isOpen, setIsOpen] = useState(false);
-    const [note, setNote] = useState<null | string>(null);
+    const [email, setEmail] = useState<string>("");
+    const [name, setName] = useState<string>("");
+    const [message, setMessage] = useState<string>("");
+    const [signature, setSignature] = useState<string>("")
+    const [isValid, setIsValid] = useState<boolean>(false)
+    const [isLoading, setIsLoading] = useState(false);
+    const [isPending, startTransition] = useTransition();
 
     const openMenu = () => {
         setIsOpen(true);
@@ -25,7 +37,7 @@ export default function SignButton() {
 
     const closeMenu = () => {
         setIsOpen(false);
-        setNote(null);
+        setMessage("");
     };
 
     useClickOutside(formContainerRef, () => {
@@ -45,6 +57,47 @@ export default function SignButton() {
             document.removeEventListener('keydown', handleKeyDown);
         };
     }, []);
+
+    //email validation handling
+    const handleEmailValidation = async () => {
+        startTransition(async () => {
+            const result = await validateEmail(email);
+            setIsValid(result);
+            if (!result) {
+                toast.error("Please add a valid email!")
+            }
+        });
+    };
+
+    //save signature
+    const handleSaveSignature = (signatureData: string) => {
+        setSignature(signatureData);
+    };
+
+    // sending the data to the backend
+    const handleSubmit = async () => {
+        try {
+            // Show a loading toast while the signature is being submitted
+            const signatureInfo = {
+                message,
+                email,
+                name,
+                signature,
+            };
+            const result = await submitSignature(signatureInfo);
+            // Dismiss the loading toast and show a success toast if the submission is successful
+            toast.dismiss();
+            toast.success('Signature submitted successfully!');
+            closeMenu();
+            router.refresh()
+        } catch (error) {
+            // Clear the loading toast
+            toast.dismiss();
+            // Show an error toast if something goes wrong
+            toast.error('Failed to submit the signature. Please try again.');
+        }
+    };
+
 
     return (
         <MotionConfig transition={TRANSITION}>
@@ -72,7 +125,7 @@ export default function SignButton() {
                         <motion.div
                             ref={formContainerRef}
                             layoutId={`popover-${uniqueId}`}
-                            className='absolute max-w-[712px] overflow-hidden bg-zinc-300 outline-none dark:bg-zinc-800 dark:text-white text-black'
+                            className='absolute max-w-[712px] overflow-hidden z-50 bg-zinc-300 outline-none dark:bg-zinc-800 dark:text-white text-black'
                             style={{
                                 borderRadius: 12,
                             }}
@@ -88,27 +141,27 @@ export default function SignButton() {
                                     layoutId={`popover-label-${uniqueId}`}
                                     aria-hidden='true'
                                     style={{
-                                        opacity: note ? 0 : 1,
+                                        opacity: message ? 0 : 1,
                                     }}
-                                    className='absolute left-4 top-3 select-none text-sm text-zinc-500 dark:text-zinc-400'
+                                    className='absolute left-4 top-2 select-none text-sm text-zinc-500 dark:text-zinc-400'
                                 >
                                     Your Message
                                 </motion.span>
                                 <textarea
-                                    className='h-full w-full resize-none rounded-md bg-transparent px-4 py-3 text-sm outline-none'
+                                    className='h-full w-full resize-none rounded-md bg-transparent px-4 py-1 text-sm outline-none'
                                     autoFocus
-                                    onChange={(e) => setNote(e.target.value)}
+                                    onChange={(e) => setMessage(e.target.value)}
                                 />
                                 <div className='px-4'>
                                     <div className='w-full grid grid-cols-6 items-center gap-1 my-3'>
-                                        <Input type="email" placeholder="Email" className='border col-span-4 dark:border-zinc-300 border-zinc-950  ' />
-                                        <Button className='col-span-2'>Verify</Button>
+                                        <Input type="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} className='border col-span-4 dark:border-zinc-300 border-zinc-950  ' />
+                                        <Button className='col-span-2' disabled={isValid || isPending} onClick={() => handleEmailValidation()}>{isPending ? <><AiOutlineLoading3Quarters className="mr-2 h-4 w-4 animate-spin" />Verifying...</> : `${isValid ? "Verified" : 'Verify'}`}</Button>
                                     </div>
-                                    <Input type="text" placeholder="Your Name" className='border col-span-4 dark:border-zinc-300 border-zinc-950  ' />
+                                    <Input type="text" placeholder="Your Name" onChange={(e) => setName(e.target.value)} className='border col-span-4 dark:border-zinc-300 border-zinc-950  ' />
 
                                 </div>
-                                <div className='px-4 mt-2'>
-                                    <SignatureCanvas />
+                                <div className='px-4 mt-2 dark:bg-zinc-800 bg-zinc-300'>
+                                    <SignatureCanvas onSave={handleSaveSignature} />
 
                                 </div>
                                 <div key='close' className='flex justify-between px-4 py-3'>
@@ -116,13 +169,12 @@ export default function SignButton() {
                                     <Button
                                         className='w-full'
                                         type='button'
-                                        aria-label='Submit note'
+                                        disabled={isLoading || !signature || !isValid}
                                         onClick={() => {
-                                            console.log('Send feedback');
-                                            closeMenu();
+                                            handleSubmit()
                                         }}
                                     >
-                                        Sign
+                                        {isLoading ? <><AiOutlineLoading3Quarters className="mr-2 h-4 w-4 animate-spin" />Signing</> : "Sign The Guestbook"}
                                     </Button>
                                 </div>
                             </form>
