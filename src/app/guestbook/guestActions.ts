@@ -18,9 +18,8 @@ export async function validateEmail(email: string): Promise<boolean> {
     });
 
     if (existingEmail) {
-        console.log('Email already verified in the database.');
         return true;
-    } 
+    }
 
     // Step 2: Proceed with external API validation if the email is not in the database
     const apiKey = process.env.ABSTRACT_API_KEY;

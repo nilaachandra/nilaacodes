@@ -61,7 +61,7 @@ const Navbar = () => {
           </div>
         </div>
       </header>
-      <div className="link-container sticky top-0 w-full flex items-end gap-x-2 gap-y-2 flex-wrap bg-white dark:bg-black py-4">
+      <div className="link-container z-50 sticky top-0 w-full flex items-end gap-x-2 gap-y-2 flex-wrap bg-white dark:bg-black py-4">
         <AnimatedBackground
           defaultValue={pathname}
           className="rounded-md bg-zinc-300 dark:bg-zinc-700"

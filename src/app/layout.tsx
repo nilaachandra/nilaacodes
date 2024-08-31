@@ -48,13 +48,14 @@ export default function RootLayout({
     <ViewTransitions>
       <html lang="en" className={GeistSans.className} suppressHydrationWarning>
         <PHProvider>
-          <body className="max-w-[712px] mx-auto w-full px-4 min-h-screen">
+          <body className="max-w-[712px] mx-auto scroll-smooth w-full px-4 min-h-screen">
             <QueryProvider>
               <PostHogPageView />
               <ProgressProvider>
                 <Providers>
                   <Navbar />
                   <main>{children}</main>
+
                   <Footer />
                 </Providers>
               </ProgressProvider>
