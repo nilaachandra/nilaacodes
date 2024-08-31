@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { Link } from "next-view-transitions";
 import ThemeToggle from "./ThemeToggle";
 import AnimatedBackground from "./core/animate-background";
+import Emoji from "./Emoji";
 
 const navLinks = [
   { linkName: "Home", href: "/" },
@@ -48,7 +49,7 @@ const Navbar = () => {
               ))}
           </div>
 
-          <div className="flex items-center justify-between gap-2">
+          <div className="flex items-center justify-between gap-1">
             <a
               href="https://x.com/nilaacodes"
               target="_blank"
@@ -56,7 +57,7 @@ const Navbar = () => {
             >
               Hire Me
             </a>
-            🚀
+            <Emoji/>
             <ThemeToggle />
           </div>
         </div>
