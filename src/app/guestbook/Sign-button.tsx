@@ -131,7 +131,7 @@ export default function SignButton() {
                         <motion.div
                             ref={formContainerRef}
                             layoutId={`popover-${uniqueId}`}
-                            className='absolute max-w-[712px] overflow-hidden z-50 bg-zinc-300 outline-none dark:bg-zinc-800 dark:text-white text-black'
+                            className='absolute max-w-[712px] overflow-hidden z-50 bg-zinc-300 outline-none dark:bg-zinc-900 dark:text-white text-black'
                             style={{
                                 borderRadius: 12,
                             }}
@@ -166,7 +166,7 @@ export default function SignButton() {
                                     <Input type="text" placeholder="Your Name" onChange={(e) => setName(e.target.value)} className='border col-span-4 dark:border-zinc-300 border-zinc-950  ' />
 
                                 </div>
-                                <div className='px-4 mt-2 dark:bg-zinc-800 bg-zinc-300'>
+                                <div className='px-4 mt-2 dark:bg-zinc-900 bg-zinc-300'>
                                     <SignatureCanvas onSave={handleSaveSignature} />
 
                                 </div>
