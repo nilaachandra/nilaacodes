@@ -65,10 +65,11 @@ export default function SignButton() {
             const result = await validateEmail(email);
             setIsValid(result);
             if (!result) {
-                toast.error("Please add a valid email!")
+                toast.error("Please add a valid email!");
             }
         });
     };
+    
 
     //save signature
     const handleSaveSignature = (signatureData: string) => {
