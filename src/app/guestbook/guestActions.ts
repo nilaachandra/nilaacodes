@@ -65,15 +65,8 @@ export async function fetchPosts() {
                 createdAt: 'desc',
             },
         });
-        return posts.map(post => ({
-            id: post.id,
-            message: post.message,
-            createdAt: post.createdAt.getTime(), // Convert Date to timestamp
-            signature: post.signature,
-            email: post.email,
-            name: post.name,
-        }));
-        
+        return posts
+
     } catch (error) {
         console.error('Error fetching posts:', error);
         throw new Error('Failed to fetch posts');

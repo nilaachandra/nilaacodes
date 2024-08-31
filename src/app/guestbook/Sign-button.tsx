@@ -6,10 +6,11 @@ import { FaSignature } from 'react-icons/fa';
 import SignatureCanvas from './SignatureCanvas';
 import { Input } from '../../components/ui/input';
 import { Button } from '@/components/ui/button';
-import { submitSignature, validateEmail } from './guestActions';
+import { fetchPosts, submitSignature, validateEmail } from './guestActions';
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { toast } from 'sonner';
 import { useRouter } from 'next/navigation';
+import { useSignatures } from './useSignatures';
 
 const TRANSITION = {
     type: 'spring',
@@ -20,7 +21,7 @@ const TRANSITION = {
 export default function SignButton() {
     const uniqueId = useId();
     const router = useRouter()
-
+    const { refetch } = useSignatures()
     const formContainerRef = useRef<HTMLDivElement>(null);
     const [isOpen, setIsOpen] = useState(false);
     const [email, setEmail] = useState<string>("");
@@ -77,6 +78,7 @@ export default function SignButton() {
     // sending the data to the backend
     const handleSubmit = async () => {
         try {
+            setIsLoading(true); // Set loading state to true
             // Show a loading toast while the signature is being submitted
             const signatureInfo = {
                 message,
@@ -84,14 +86,18 @@ export default function SignButton() {
                 name,
                 signature,
             };
+
             const result = await submitSignature(signatureInfo);
+
             // Dismiss the loading toast and show a success toast if the submission is successful
+            setIsLoading(false); // Set loading state to false
             toast.dismiss();
             toast.success('Signature submitted successfully!');
+            refetch()
             closeMenu();
-            router.refresh()
         } catch (error) {
             // Clear the loading toast
+            setIsLoading(false); // Set loading state to false
             toast.dismiss();
             // Show an error toast if something goes wrong
             toast.error('Failed to submit the signature. Please try again.');

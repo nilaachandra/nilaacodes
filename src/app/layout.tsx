@@ -10,6 +10,7 @@ import dynamic from "next/dynamic";
 import { PHProvider } from "./Providers";
 import ProgressProvider from "./ProgressProvider";
 import { Toaster } from "sonner";
+import QueryProvider from "./QueryProvider";
 
 const inter = Inter({ subsets: ["latin"], weight: ["400", "800"] });
 
@@ -48,15 +49,17 @@ export default function RootLayout({
       <html lang="en" className={GeistSans.className} suppressHydrationWarning>
         <PHProvider>
           <body className="max-w-[712px] mx-auto w-full px-4 min-h-screen">
-            <PostHogPageView />
-            <ProgressProvider>
-              <Providers>
-                <Navbar />
-                <main>{children}</main>
-                <Footer />
-              </Providers>
-            </ProgressProvider>
-            <Toaster position="top-center"/>
+            <QueryProvider>
+              <PostHogPageView />
+              <ProgressProvider>
+                <Providers>
+                  <Navbar />
+                  <main>{children}</main>
+                  <Footer />
+                </Providers>
+              </ProgressProvider>
+              <Toaster position="top-center" />
+            </QueryProvider>
           </body>
         </PHProvider>
       </html>

@@ -1,31 +1,41 @@
+"use client";
 import Image from "next/image";
 import { format } from "date-fns";
+import { useSignatures } from "./useSignatures";
+import { capitalize } from "@/lib/capitalize";
+import SignatureSkeleton from "./SignatureSkeleton";
 
-export type PostsQuery = {
+export type Post = {
     id: string;
     message: string;
     email: string;
-    createdAt: number;
+    createdAt: Date; // Assuming createdAt is now a Date object
     signature: string;
     name: string;
 };
 
-export const SignatureCard = ({ posts }: { posts: PostsQuery[] }) => {
+export const SignatureCard = () => {
+    const { data: posts, isLoading } = useSignatures();
+
+    if (isLoading) {
+        return <SignatureSkeleton/>
+    }
+
+    if (!posts || posts.length === 0) {
+        return <p>No signatures available.</p>;
+    }
+
     return (
         <ul className="grid grid-cols-2 gap-3 w-full mt-3">
             {posts.map((post) => (
                 <li key={post.id} className="flex col-span-2 lg:col-span-1 w-full">
-                    <div className="rounded-lg w-full flex flex-col justify-between space-y-3 h-full bg-zinc-300 dark:bg-zinc-800 p-4">
-                        <p className="leading-6 text-grey-900 dark:text-grey-50">{post.message}</p>
-
-                        <div className="mt-auto flex items-center justify-between">
-                            <div className="flex flex-col justify-end h-full text-sm">
-
-                                <p className="font-bold">{post.name || "adsfdsf"}</p>
-
-
+                    <div className="rounded-lg w-full flex flex-col leading-none justify-between h-full bg-zinc-300 dark:bg-zinc-800 p-4">
+                        <p className="leading-none">{post.message}</p>
+                        <p className="leading-none font-semibold">By {post.name || "Unknown"}</p>
+                        <div className="flex items-center justify-between">
+                            <div className="flex flex-col justify-end h-full text-xs">
                                 <p>
-                                    {format(new Date(post.createdAt * 1000), "MMM d, yyyy h:mm a")}
+                                    {format(new Date(post.createdAt), "MMMM d, yyyy, h:mm a")}
                                 </p>
                             </div>
                             {post.signature && (
