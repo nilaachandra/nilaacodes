@@ -4,9 +4,9 @@ import { useQuery } from "@tanstack/react-query";
 import { fetchPosts } from "./guestActions";
 
 export const useSignatures = () => {
-  const { data, isLoading, error, refetch } = useQuery({
+  const { data, isLoading, error, refetch, isFetching } = useQuery({
     queryKey: ["result"],
     queryFn: () => fetchPosts(),
   });
-  return { data, isLoading, error, refetch };
+  return { data, isLoading, error, refetch, isFetching };
 };

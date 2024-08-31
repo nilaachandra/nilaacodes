@@ -15,9 +15,9 @@ export type Post = {
 };
 
 export const SignatureCard = () => {
-    const { data: posts, isLoading } = useSignatures();
+    const { data: posts, isLoading, isFetching } = useSignatures();
 
-    if (isLoading) {
+    if (isLoading || isFetching) {
         return <SignatureSkeleton/>
     }
 

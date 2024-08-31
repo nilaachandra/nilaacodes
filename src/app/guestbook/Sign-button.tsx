@@ -175,7 +175,7 @@ export default function SignButton() {
                                     <Button
                                         className='w-full'
                                         type='button'
-                                        disabled={isLoading || !signature || !isValid}
+                                        disabled={isLoading || !signature || !isValid || !message || !name}
                                         onClick={() => {
                                             handleSubmit()
                                         }}
