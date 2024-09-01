@@ -181,7 +181,7 @@ export default function SignButton() {
                                             handleSubmit()
                                         }}
                                     >
-                                        {isLoading ? <><AiOutlineLoading3Quarters className="mr-2 h-4 w-4 animate-spin" />Signing</> : "Sign The Guestbook"}
+                                        {isLoading ? <><AiOutlineLoading3Quarters className="mr-2 h-4 w-4 animate-spin" />Signing</> : <>Sign The Guestbook <FaSignature size={24} className='ml-1'/></>}
                                     </Button>
                                 </div>
                             </form>
