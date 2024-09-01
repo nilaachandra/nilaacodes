@@ -154,12 +154,13 @@ export default function SignButton() {
                                     Your Message
                                 </motion.span>
                                 <textarea
-                                    className='h-full w-full resize-none rounded-md bg-transparent px-4 py-1 text-sm outline-none'
+                                    className='h-full w-full resize-none rounded-md bg-transparent px-4 lg:py-1 py-3 text-sm outline-none'
                                     autoFocus
                                     onChange={(e) => setMessage(e.target.value)}
                                 />
                                 <div className='px-4'>
-                                    <div className='w-full grid grid-cols-6 items-center gap-1 my-3'>
+                                    <p className='leading-none text-xs'>Verify your email before signing!</p>
+                                    <div className='w-full grid grid-cols-6 items-center gap-1 mt-1 mb-3'>
                                         <Input type="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} className='border col-span-4 dark:border-zinc-200 border-zinc-950' />
                                         <Button className='col-span-2' disabled={isValid || isPending} onClick={() => handleEmailValidation()}>{isPending ? <><AiOutlineLoading3Quarters className="mr-2 h-4 w-4 animate-spin" />Verifying...</> : `${isValid ? "Verified" : 'Verify'}`}</Button>
                                     </div>

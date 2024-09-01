@@ -22,8 +22,31 @@ export async function validateEmail(email: string): Promise<boolean> {
     }
 
     // Step 2: Proceed with external API validation if the email is not in the database
-    const apiKey = process.env.ABSTRACT_API_KEY;
-    const apiUrl = `https://emailvalidation.abstractapi.com/v1/?api_key=${apiKey}&email=${email}`;
+
+    //via abstract api
+    // const apiKey = process.env.ABSTRACT_API_KEY;
+    // const apiUrl = `https://emailvalidation.abstractapi.com/v1/?api_key=${apiKey}&email=${email}`;
+
+    // try {
+    //     const response = await axios.get(apiUrl);
+    //     const emailData = response.data;
+
+    //     // Combine the validation logic here
+    //     const isValid = (
+    //         emailData.deliverability === 'DELIVERABLE' &&
+    //         emailData.quality_score >= 0.7 &&
+    //         emailData.is_valid_format.value &&
+    //         emailData.is_mx_found.value &&
+    //         emailData.is_smtp_valid.value &&
+    //         !emailData.is_disposable_email.value &&
+    //         !emailData.is_catchall_email.value &&
+    //         !emailData.is_role_email.value
+    //     );
+
+
+    //my api limit got exceeded so im using mailboxlayer
+    const apiKey = process.env.MAILBOXLAYER_API_KEY;
+    const apiUrl = `https://apilayer.net/api/check?access_key=${apiKey}&email=${email}`;
 
     try {
         const response = await axios.get(apiUrl);
@@ -31,16 +54,14 @@ export async function validateEmail(email: string): Promise<boolean> {
 
         // Combine the validation logic here
         const isValid = (
-            emailData.deliverability === 'DELIVERABLE' &&
-            emailData.quality_score >= 0.7 &&
-            emailData.is_valid_format.value &&
-            emailData.is_mx_found.value &&
-            emailData.is_smtp_valid.value &&
-            !emailData.is_disposable_email.value &&
-            !emailData.is_catchall_email.value &&
-            !emailData.is_role_email.value
+            emailData.format_valid &&
+            emailData.mx_found &&
+            emailData.smtp_check &&
+            emailData.score >= 0.5 &&
+            !emailData.disposable &&
+            !emailData.catch_all &&
+            !emailData.role
         );
-
         return isValid;
     } catch (error) {
         console.error('Error validating email:', error);
