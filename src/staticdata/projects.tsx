@@ -54,6 +54,22 @@ const projects: Project[] = [
   },
   {
     id: 4,
+    image: "/picmorph-logo.webp",
+    title: "Picmorph",
+    description:
+      "Picmorph is a minimal image compressor and convertor tool that converts images to jpg, png or webp format on the browser. No servers involved!",
+    githubURL: "https://github.com/nilaachandra/picmorph",
+    linkURL: "https://picmorph.nilaacodes.me",
+    skills: [
+      "Next Js",
+      "TypeScript",
+      "Tailwind",
+      "ShadCn",
+    ],
+    status: "running",
+  },
+  {
+    id: 4,
     image: "https://nextjsmodernlp.vercel.app/_next/static/media/Logo.d5a36fa0.svg",
     title: "Modern Landing Page",
     description:
