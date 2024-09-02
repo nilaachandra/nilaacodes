@@ -55,12 +55,7 @@ export async function validateEmail(email: string): Promise<boolean> {
         // Combine the validation logic here
         const isValid = (
             emailData.format_valid &&
-            emailData.mx_found &&
-            emailData.smtp_check &&
-            emailData.score >= 0.1 &&
-            !emailData.disposable &&
-            !emailData.catch_all &&
-            !emailData.role
+            emailData.score >= 0.3
         );
         return isValid;
     } catch (error) {
