@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Bricolage_Grotesque, Inter } from "next/font/google";
+import { Bricolage_Grotesque, Inter, Manrope } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./provider";
 import Navbar from "@/components/navbar";
@@ -12,11 +12,11 @@ import ProgressProvider from "./ProgressProvider";
 import { Toaster } from "sonner";
 import QueryProvider from "./QueryProvider";
 
-const inter = Inter({ subsets: ["latin"], weight: ["400", "800"] });
+const inter = Inter({ subsets: ["latin"], weight: ["400", "900"] });
 
-const bricolageRegular = Bricolage_Grotesque({
+const manrope = Manrope({
   subsets: ["latin"],
-  weight: ["400", "800"],
+  weight: ["500", "800"],
 });
 
 export const metadata: Metadata = {
@@ -46,7 +46,7 @@ export default function RootLayout({
 }>) {
   return (
     <ViewTransitions>
-      <html lang="en" className={GeistSans.className} suppressHydrationWarning>
+      <html lang="en" className={manrope.className} suppressHydrationWarning>
         <PHProvider>
           <body className="max-w-[712px] mx-auto scroll-smooth w-full px-4 min-h-screen">
             <QueryProvider>
