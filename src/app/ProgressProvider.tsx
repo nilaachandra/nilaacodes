@@ -10,6 +10,7 @@ const ProgressProvider = ({ children } : {children:ReactNode}) => {
       <ProgressBar
         height="3px"
         color="blue"
+        
       />
     </>
   );

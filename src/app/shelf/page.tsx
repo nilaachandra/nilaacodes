@@ -9,6 +9,9 @@ const Shelf = () => {
         books, songs I like, and photos I&apos;ve taken. It&apos;s like a snapshot of my life, all in one place.
         Feel free to take a look around. You might find something interesting.
       </p>
+      <ul>
+        
+      </ul>
       <p className='mt-4 text-2xl font-bold'>Building btw!</p>
     </div>
   )
