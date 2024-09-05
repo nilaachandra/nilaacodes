@@ -55,7 +55,6 @@ export default function RootLayout({
                 <Providers>
                   <Navbar />
                   <main>{children}</main>
-
                   <Footer />
                 </Providers>
               </ProgressProvider>

@@ -50,9 +50,9 @@ export async function validateEmail(email: string): Promise<boolean> {
 
     try {
         const response = await axios.get(apiUrl);
-        const emailData = response.data;
+        const emailData = response.data; 
 
-        // Combine the validation logic here
+        // email validation logic
         const isValid = (
             emailData.format_valid &&
             emailData.score >= 0.3
