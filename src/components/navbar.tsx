@@ -76,7 +76,7 @@ const Navbar = () => {
               key={href}
               href={href}
               data-id={href}
-              className={`inline-flex items-center justify-center text-center px-2 ${pathname === href ? "text-zinc-800 dark:text-zinc-50" : "text-zinc-500"
+              className={`inline-flex items-center justify-center text-center px-2 ${pathname === href ? "text-zinc-800 font-bold dark:text-zinc-50" : "text-zinc-500"
                 }`}
             >
               {linkName}

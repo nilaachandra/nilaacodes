@@ -26,14 +26,14 @@ const BlogLink: React.FC<BlogLinkProps> = ({
       className="leading-none tracking-tight flex flex-col hover:bg-zinc-200 p-1 rounded-md transition-all duration-200 dark:hover:bg-zinc-900"
     >
       <div className="flex justify-between items-center">
-        <h1 className="font-semibold lg:text-lg text-base leading-none tracking-tight">
+        <h1 className="font-semibold lg:text-lg text-base leading-4 tracking-tight">
          {emoji} {title}
         </h1>
       </div>
-      <p className="dark:text-zinc-400 leading-none text-zinc-600">
+      <p className="dark:text-zinc-400 leading-4 text-sm text-zinc-600">
         {description}
       </p>
-      <p className="dark:text-zinc-400 text-sm mt-1 text-zinc-600">
+      <p className="dark:text-zinc-400 text-xs mt-1 text-zinc-600">
         {createdDate}
       </p>
     </Link>
