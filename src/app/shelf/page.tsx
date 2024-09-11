@@ -25,13 +25,13 @@ export default function Shelf() {
   return (
     <div className="w-full">
       <h1 className="font-bold text-3xl mb-4">My Shelf</h1>
-      <p className="leading-5 mb-3">
+      <p className="leading-5 mb-4">
         This is my little corner of the internet where I keep all my
         stuff—journals, books, songs I like, and photos I&apos;ve taken.
         It&apos;s like a snapshot of my life, all in one place. Feel free to
         take a look around. You might find something interesting.
       </p>
-      <div className="mb-4 flex flex-wrap gap-2">
+      <div className=" flex flex-wrap gap-2">
         {ITEMS.map((item, index) => (
           <button
             key={index}
@@ -47,7 +47,7 @@ export default function Shelf() {
           </button>
         ))}
       </div>
-      <div className="overflow-hidden border-t border-zinc-200 dark:border-zinc-700">
+      <div className="overflow-hidden">
         <TransitionPanel
           activeIndex={activeIndex}
           transition={{ duration: 0.2, ease: "easeInOut" }}
@@ -59,9 +59,9 @@ export default function Shelf() {
         >
           {ITEMS.map((item, index) => (
             <div key={index} className="py-2">
-              <h3 className="mb-2 font-medium text-zinc-800 dark:text-zinc-100">
+              <h1 className="mb-2 font-semibold text-2xl text-zinc-800 dark:text-zinc-100">
                 {item.label}
-              </h3>
+              </h1>
               {item.component}
             </div>
           ))}
