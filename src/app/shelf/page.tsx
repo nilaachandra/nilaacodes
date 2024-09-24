@@ -24,7 +24,7 @@ export default function Shelf() {
   const [activeIndex, setActiveIndex] = useState(0);
   return (
     <div className="w-full">
-      <h1 className="font-bold text-3xl mb-4">My Shelf</h1>
+      <h1 className="font-bold text-2xl mb-4">My Shelf</h1>
       <p className="leading-5 mb-4">
         This is my little corner of the internet where I keep all my
         stuff—journals, books, songs I like, and photos I&apos;ve taken.
@@ -36,7 +36,7 @@ export default function Shelf() {
           <button
             key={index}
             onClick={() => setActiveIndex(index)}
-            className={`rounded-md px-3 py-1 text-sm font-medium ${
+            className={`rounded-md px-3 py-1 text-sm font-medium ${ 
               activeIndex === index
                 ? "bg-zinc-200 text-zinc-900 dark:bg-zinc-800 dark:text-zinc-100"
                 : "bg-zinc-100 text-zinc-600 dark:bg-zinc-700 dark:text-zinc-400"
