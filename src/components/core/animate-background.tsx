@@ -9,6 +9,7 @@ import {
   useState,
   useId,
 } from 'react';
+import React from 'react'
 
 type AnimatedBackgroundProps = {
   children:
