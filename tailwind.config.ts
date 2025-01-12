@@ -21,6 +21,10 @@ const config: Config = {
       },
     },
     extend: {
+      fontFamily: {
+        instrumentSerif: ['var(--font-instrumentSerif)'],
+        manrope: ['var(--font-manrope)'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

@@ -1,8 +1,8 @@
-import Homepage from "@/components/Home";
+import LandingPage from "@/components/LandingPage";
 export default function Home() {
   return (
    <>
-    <Homepage/>
+    <LandingPage/>
    </>
   );
 }

@@ -4,7 +4,7 @@ import { TiLocationArrowOutline } from 'react-icons/ti'
 
 const Footer = () => {
   return (
-    <footer className="mt-4">
+    <footer className="mt-4 font-manrope">
         {" "}
         <div className='flex justify-between'>
        {" "}

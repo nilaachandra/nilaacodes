@@ -11,13 +11,14 @@ import {
 
 // TypeScript type for the component props
 type BlogPageProps = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
 // Server Component for fetching data and passing to Client Component
-const BlogPage = async ({ params }: BlogPageProps) => {
+const BlogPage = async (props: BlogPageProps) => {
+  const params = await props.params;
   // Fetch the post by slug
   const post = await fetchBySlug(params.slug);
 

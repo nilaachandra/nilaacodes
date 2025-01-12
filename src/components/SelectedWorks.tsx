@@ -1,18 +1,6 @@
 import projects from "@/staticdata/projects";
 import React from "react";
-import { LuGithub, LuLink } from "react-icons/lu";
-import {
-  SiJavascript,
-  SiLlvm,
-  SiMeta,
-  SiNextdotjs,
-  SiReact,
-  SiReactquery,
-  SiShadcnui,
-  SiSupabase,
-  SiTailwindcss,
-  SiTypescript,
-} from "react-icons/si";
+
 import ProjectCard from "./ProjectCard";
 const SelectedWorks = () => {
   return (
@@ -22,8 +10,6 @@ const SelectedWorks = () => {
         {projects.slice(0, 3).map((project) => (
           <div className="" key={project.id}>
             <ProjectCard
-              skills={project.skills}
-              status={project.status}
               title={project.title}
               githubURL={project.githubURL}
               linkURL={project.linkURL}

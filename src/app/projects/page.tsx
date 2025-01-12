@@ -6,6 +6,7 @@ import {
   MotionHeader,
 } from "@/components/MotionDiv";
 import ProjectCard from "@/components/ProjectCard";
+import Techstack from "@/components/Techstack";
 import projects from "@/staticdata/projects";
 import React from "react";
 
@@ -18,14 +19,20 @@ const Projects = () => {
       className="w-full min-h-[60vh]"
     >
       <MotionDiv variants={childVariants} className="mb-4">
-        <h2 className="text-2xl mb-2 font-bold">Experience</h2>
+        <h2 className="text-3xl mb-2 font-bold font-instrumentSerif italic text-blue-800">
+          Experience
+        </h2>
         <Experience />
       </MotionDiv>
+      <MotionDiv variants={childVariants} className="mb-4">
+        <Techstack />
+      </MotionDiv>
+
       <MotionHeader
         variants={childVariants}
         className="flex items-center justify-between"
       >
-        <h1 className="font-bold text-2xl">My Projects</h1>
+        <h1 className="font-bold text-3xl italic font-instrumentSerif text-blue-800">my projects</h1>
         <a
           href="https://github.com/nilaachandra?tab=repositories"
           target="_blank"
@@ -34,7 +41,7 @@ const Projects = () => {
           More on Github
         </a>
       </MotionHeader>
-      <div className="flex flex-col gap-3 mt-4">
+      <div className="grid grid-cols-2 gap-2 lg:grid-cols-3 mt-4">
         {projects.map((project) => (
           <MotionHeader
             variants={childVariants}
@@ -42,8 +49,6 @@ const Projects = () => {
             key={project.title}
           >
             <ProjectCard
-              skills={project.skills}
-              status={project.status}
               title={project.title}
               githubURL={project.githubURL}
               linkURL={project.linkURL}

@@ -13,17 +13,17 @@ interface Project {
 }
 
 const projects: Project[] = [
-  {
-    id: 2,
-    image: "/spotlistify.png",
-    title: "Spotlistify",
-    description:
-      "A directory of Spotify playlists",
-    githubURL: "https://github.com/nilaachandra/spotlistify",
-    linkURL: "https://spotlistify.vercel.app",
-    skills: ["Next JS", "TypeScript", "Tailwind", "ShadCn", "Tanstack Query", "PostgreSQL", "Prisma", "NextAuth"],
-    status: "running",
-  },
+  // {
+  //   id: 1,
+  //   image: "/spotlistify.png",
+  //   title: "Spotlistify",
+  //   description:
+  //     "A directory of Spotify playlists",
+  //   githubURL: "https://github.com/nilaachandra/spotlistify",
+  //   linkURL: "https://spotlistify.vercel.app",
+  //   skills: ["Next JS", "TypeScript", "Tailwind", "ShadCn", "Tanstack Query", "PostgreSQL", "Prisma", "NextAuth"],
+  //   status: "running",
+  // },
   {
     id: 2,
     image: "/silly.png",
@@ -60,17 +60,13 @@ const projects: Project[] = [
       "Picmorph is a minimal image compressor and convertor tool that converts images to jpg, png or webp format on the browser. No servers involved!",
     githubURL: "https://github.com/nilaachandra/picmorph",
     linkURL: "https://picmorph.nilaacodes.me",
-    skills: [
-      "Next Js",
-      "TypeScript",
-      "Tailwind",
-      "ShadCn",
-    ],
+    skills: ["Next Js", "TypeScript", "Tailwind", "ShadCn"],
     status: "running",
   },
   {
-    id: 4,
-    image: "https://nextjsmodernlp.vercel.app/_next/static/media/Logo.d5a36fa0.svg",
+    id: 5,
+    image:
+      "https://nextjsmodernlp.vercel.app/_next/static/media/Logo.d5a36fa0.svg",
     title: "Modern Landing Page",
     description:
       "A modern sleek landing page I developed with the design provided by Jan Marshall in one of his videos",
@@ -86,28 +82,9 @@ const projects: Project[] = [
     ],
     status: "running",
   },
+
   {
-    id: 4,
-    image:
-      "https://github.com/nilaachandra/twentysevendays/blob/master/public/27dayslogo.png?raw=true",
-    title: "27days.life",
-    description:
-      "27 Days is a generative AI powered gamified platform where you can start your journey of getting rid from an addiction you have. Discontinued due to lack of free api keys.",
-    githubURL: "https://github.com/nilaachandra/twentysevendays",
-    linkURL: "https://27days.vercel.app/",
-    skills: [
-      "Next JS",
-      "TypeScript",
-      "Tailwind",
-      "Supabase",
-      "Mistral AI",
-      "Tanstack Query",
-      "ShadCn",
-    ],
-    status: "discontinued",
-  },
-  {
-    id: 1,
+    id: 7,
     image: "/animepfp.jpg",
     title: "Minimalio",
     description:
@@ -118,25 +95,7 @@ const projects: Project[] = [
     status: "running",
   },
   {
-    id: 5,
-    image: "/rocket.png",
-    title: "Another Boilerplate",
-    description: "A Next Js boilerplate starter with many features",
-    githubURL: "https://github.com/nilaachandra/another-boilerplate",
-    linkURL: "",
-    skills: [
-      "Next JS",
-      "TypeScript",
-      "Tailwind",
-      "Prisma",
-      "PostgresSQL",
-      "ShadCn",
-      "Next Auth",
-    ],
-    status: "building",
-  },
-  {
-    id: 6,
+    id: 9,
     image:
       "https://raw.githubusercontent.com/nilaachandra/Brainwave-Landing-Page/9e307e6bc1e0bc01caebb17fa629bdc138554402/src/assets/brainwave-symbol.svg",
     title: "Brainwave",
@@ -148,7 +107,7 @@ const projects: Project[] = [
     status: "running",
   },
   {
-    id: 7,
+    id: 10,
     image: "https://logomoji.vercel.app/assets/LogoMojii-DWCKwUEl.png",
     title: "Logomoji",
     description:
@@ -159,7 +118,7 @@ const projects: Project[] = [
     status: "running",
   },
   {
-    id: 8,
+    id: 11,
     image:
       "https://github.com/nilaachandra/Colour_Picker/blob/main/src/assets/Cbnlogo.png?raw=true",
     title: "ColorsByNilaa",
@@ -171,7 +130,7 @@ const projects: Project[] = [
     status: "running",
   },
   {
-    id: 9,
+    id: 12,
     image:
       "https://uploads-ssl.webflow.com/5f2429f172d117fcee10e819/605c62f4c78c4ba46a1268be_avatar-1-p-2000.jpeg",
     title: "Niccollo Miranda",
@@ -183,7 +142,7 @@ const projects: Project[] = [
     status: "running",
   },
   {
-    id: 10,
+    id: 13,
     image: "/coffee.png",
     title: "Coffeehubb",
     description: "My first major web dev project",

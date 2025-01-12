@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import { Bricolage_Grotesque, Inter, Manrope } from "next/font/google";
+import { Instrument_Serif, Inter, Manrope } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./provider";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/Footer";
-import { GeistSans } from "geist/font/sans";
 import { ViewTransitions } from "next-view-transitions";
 import dynamic from "next/dynamic";
 import { PHProvider } from "./Providers";
@@ -13,10 +12,17 @@ import { Toaster } from "sonner";
 import QueryProvider from "./QueryProvider";
 
 const inter = Inter({ subsets: ["latin"], weight: ["400", "900"] });
-
+const instrumentSerif = Instrument_Serif({
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400"],
+  variable: "--font-instrumentSerif",
+});
 const manrope = Manrope({
   subsets: ["latin"],
+  display: "swap",
   weight: ["500", "800"],
+  variable: "--font-manrope",
 });
 
 export const metadata: Metadata = {
@@ -36,9 +42,7 @@ export const metadata: Metadata = {
     type: "website",
   },
 };
-const PostHogPageView = dynamic(() => import("@/app/PostHogPageView"), {
-  ssr: false,
-});
+const PostHogPageView = dynamic(() => import("@/app/PostHogPageView"), {});
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -46,7 +50,11 @@ export default function RootLayout({
 }>) {
   return (
     <ViewTransitions>
-      <html lang="en" className={manrope.className} suppressHydrationWarning>
+      <html
+        lang="en"
+        className={`${instrumentSerif.variable} ${manrope.variable}`}
+        suppressHydrationWarning
+      >
         <PHProvider>
           <body className="max-w-[712px] mx-auto scroll-smooth w-full px-4 min-h-screen">
             <QueryProvider>
@@ -54,7 +62,7 @@ export default function RootLayout({
               <ProgressProvider>
                 <Providers>
                   <Navbar />
-                  <main>{children}</main>
+                  <main className="font-manrope">{children}</main>
                   <Footer />
                 </Providers>
               </ProgressProvider>

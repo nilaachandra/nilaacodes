@@ -12,7 +12,6 @@ import {
 import MyWritings from "./MyWritings";
 import MyLocation from "./MyLocation";
 import Experience from "./Experience";
-
 const Homepage = () => {
   return (
     <MotionDiv initial="hidden" animate="visible" variants={containerVariants}>
@@ -32,8 +31,8 @@ const Homepage = () => {
           </div>
           <div className="desc md:w-full   lg:w-full col-span-2">
             <div className="flex items-center gap-0.5">
-              <h1 className="font-bold text-3xl">
-                <span className="text-blue-700">Nilaa</span> Laishram🎃
+              <h1 className="">
+                <span className="text-blue-700 font-instrumentSerif">Nilaa</span> Laishram🎃
               </h1>
             </div>
             <ul className="list-inside">
