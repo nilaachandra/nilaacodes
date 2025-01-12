@@ -1,18 +1,8 @@
 'use client'
 
+import Link from 'next/link'
 import { Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
-
-function SearchParamsComponent() {
-  const searchParams = useSearchParams()
-  
-  return (
-    <div>
-      {/* Use searchParams here */}
-      <p>Current query: {searchParams.toString()}</p>
-    </div>
-  )
-}
 
 export default function NotFound() {
   return (
@@ -22,10 +12,12 @@ export default function NotFound() {
         Sorry, the page you are looking for does not exist.
       </p>
       
-      {/* Wrap the component using useSearchParams in Suspense */}
-      <Suspense fallback={<div>Loading...</div>}>
-        <SearchParamsComponent />
-      </Suspense>
+      <Link 
+        href="/"
+        className="text-primary hover:underline"
+      >
+        Return Home
+      </Link>
     </div>
   )
 }

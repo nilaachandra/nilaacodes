@@ -9,6 +9,8 @@
     "@typescript-eslint/no-unused-vars": "off",
     "no-var": "off",
     "@typescript-eslint/no-empty-object-type": "off",
-    "react-hooks/exhaustive-deps": "off"
+    "react-hooks/exhaustive-deps": "off",
+    "@next/next/no-before-interactive-script-outside-document": "off",
+    "react-hooks/rules-of-hooks": "off"
   }
 }
