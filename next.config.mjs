@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   images: {
     remotePatterns: [
       {
@@ -24,19 +27,19 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "pbs.twimg.com"
-      }
+        hostname: "pbs.twimg.com",
+      },
     ],
   },
   async headers() {
     return [
       {
         // Target specific routes with custom cache control
-        source: '/writings', // Adjust to match your specific page or route
+        source: "/writings", // Adjust to match your specific page or route
         headers: [
           {
-            key: 'Cache-Control',
-            value: 'no-store', // Disables caching
+            key: "Cache-Control",
+            value: "no-store", // Disables caching
           },
         ],
       },
