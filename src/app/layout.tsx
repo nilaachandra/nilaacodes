@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     shortcut: ["nilaacodes-dark.png"],
   },
   openGraph: {
-    title: "Nilaacodes",
+    title: "nilaacodes",
     description: "my corner of the internet",
     url: "https://www.nilaacodes.me",
     siteName: "Nilaacodes",
