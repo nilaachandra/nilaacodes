@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Instrument_Serif, Inter, Manrope } from "next/font/google";
 import "./globals.css";
-import { Providers } from "./provider";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/Footer";
 import { ViewTransitions } from "next-view-transitions";
@@ -26,7 +25,7 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Nilaacodes",
+  title: "nilaacodes",
   description: "my corner of the internet",
   icons: {
     icon: ["nilaacodes-dark.png"],
@@ -52,7 +51,7 @@ export default function RootLayout({
     <ViewTransitions>
       <html
         lang="en"
-        className={`${instrumentSerif.variable} ${manrope.variable}`}
+        className={`${instrumentSerif.variable} ${manrope.variable} 'light'`}
         suppressHydrationWarning
       >
         <PHProvider>
@@ -60,11 +59,9 @@ export default function RootLayout({
             <QueryProvider>
               <PostHogPageView />
               <ProgressProvider>
-                <Providers>
-                  <Navbar />
-                  <main className="font-manrope">{children}</main>
-                  <Footer />
-                </Providers>
+                <Navbar />
+                <main className="font-manrope">{children}</main>
+                <Footer />
               </ProgressProvider>
               <Toaster position="top-center" />
             </QueryProvider>
