@@ -22,7 +22,7 @@ const Guestbook = () => {
           </h1>
         </MotionDiv>
         <MotionDiv variants={childVariants} className="">
-          <p>
+          <p className="text-sm">
             Who doesn&apos;t love to hear some good words? So drop some nice
             words for me along with your signature. It isn&apos;t neccessary to
             sign but just draw something cute :)
