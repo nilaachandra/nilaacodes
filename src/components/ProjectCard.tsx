@@ -33,7 +33,7 @@ const ProjectCard: React.FC<CardProps> = ({
   return (
     <Card
       onClick={handleClick}
-      className="flex flex-col w-full h-[144px] p-2 bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-900 dark:hover:bg-zinc-800 transition-all duration-200 cursor-pointer group"
+      className="flex flex-col w-full h-[144px] p-2 bg-zinc-100 hover:bg-zinc-200 transition-all duration-200 cursor-pointer group"
     >
       <CardContent className="flex p-0 w-full justify-between text-blue-500">
         <img
@@ -67,7 +67,7 @@ const ProjectCard: React.FC<CardProps> = ({
           <div className="mb-1 flex justify-between items-center"></div>
         </CardHeader>
         <CardTitle className="font-bold text-sm">{title} </CardTitle>
-        <CardDescription className="text-xs line-clamp-2 text-zinc-600 dark:text-zinc-400 mb-1">
+        <CardDescription className="text-xs line-clamp-2 text-zinc-600 mb-1">
           {description}
         </CardDescription>
       </div>

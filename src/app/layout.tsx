@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     description: "my corner of the internet",
     url: "https://www.nilaacodes.me",
     siteName: "Nilaacodes",
-    images: [{ url: "/nilaacodesog.png", width: 1200, height: 630 }],
+    images: [{ url: "/nilaacodes-opengraph.png", width: 1200, height: 630 }],
     locale: "en-IN",
     type: "website",
   },
@@ -56,7 +56,7 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <PHProvider>
-          <body className="max-w-[712px] mx-auto scroll-smooth w-full px-4 min-h-screen">
+          <body className="max-w-[712px] mx-auto scroll-smooth w-full px-4 pb-8 min-h-screen">
             <QueryProvider>
               <PostHogPageView />
               <ProgressProvider>

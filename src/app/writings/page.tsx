@@ -22,7 +22,7 @@ const BlogLinks = async () => {
       className="w-full min-h-[60vh] flex flex-col"
     >
       <MotionHeader variants={childVariants} className="mb-3">
-        <h1 className="font-bold text-2xl">My Writings</h1>
+        <h1 className="font-bold font-instrumentSerif text-blue-800 italic text-3xl">my writings</h1>
       </MotionHeader>
       {posts.map((post: any, index: number) => {
         const emoji = post.icon.emoji || ""

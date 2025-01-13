@@ -5,7 +5,7 @@ const Socials = () => {
   return (
     <section className="w-full mt-3">
       <h1 className="font-semibold mb-3 text-3xl text-blue-800 font-instrumentSerif">
-        Let&apos;s have a chat
+        let&apos;s have a chat
       </h1>
       <div className="flex gap-3 items-center">
         {socialLinks.map((social, index) => (

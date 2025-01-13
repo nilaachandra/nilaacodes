@@ -20,7 +20,7 @@ const Projects = () => {
     >
       <MotionDiv variants={childVariants} className="mb-4">
         <h2 className="text-3xl mb-2 font-bold font-instrumentSerif italic text-blue-800">
-          Experience
+          experience
         </h2>
         <Experience />
       </MotionDiv>

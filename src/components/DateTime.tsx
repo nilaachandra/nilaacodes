@@ -22,7 +22,7 @@ const DateTime: React.FC<DateTimeProps> = ({ formatString = "MMMM d, yyyy" }) =>
     };
   }, [formatString]);
 
-  return <div>{currentDateTime}</div>;
+  return <div className="text-sm">{currentDateTime}</div>;
 };
 
 export default DateTime;

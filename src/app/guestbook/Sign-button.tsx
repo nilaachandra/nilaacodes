@@ -111,7 +111,7 @@ export default function SignButton() {
                 <motion.button
                     key='button'
                     layoutId={`popover-${uniqueId}`}
-                    className='flex h-9 items-center bg-zinc-900 text-white dark:bg-white dark:text-black px-2 font-semibold'
+                    className='flex h-9 items-center bg-blue-800 text-white  px-2 font-semibold'
                     style={{
                         borderRadius: 8,
                     }}
@@ -131,7 +131,7 @@ export default function SignButton() {
                         <motion.div
                             ref={formContainerRef}
                             layoutId={`popover-${uniqueId}`}
-                            className='absolute max-w-[712px] overflow-hidden z-50 bg-zinc-200 outline-none dark:bg-zinc-900 dark:text-white text-black'
+                            className='absolute max-w-[712px] overflow-hidden z-50 bg-zinc-200 outline-none text-black'
                             style={{
                                 borderRadius: 12,
                             }}
@@ -149,7 +149,7 @@ export default function SignButton() {
                                     style={{
                                         opacity: message ? 0 : 1,
                                     }}
-                                    className='absolute left-4 top-2 select-none text-sm text-zinc-500 dark:text-zinc-400'
+                                    className='absolute left-4 top-2 select-none text-sm text-zinc-500'
                                 >
                                     Your Message
                                 </motion.span>
@@ -162,19 +162,19 @@ export default function SignButton() {
                                     <p className='leading-none text-xs'>Verify your email before signing!</p>
                                     <div className='w-full grid grid-cols-6 items-center gap-1 mt-1 mb-3'>
                                         <Input type="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} className='border col-span-4 dark:border-zinc-200 border-zinc-950' />
-                                        <Button className='col-span-2' disabled={isValid || isPending} onClick={() => handleEmailValidation()}>{isPending ? <><AiOutlineLoading3Quarters className="mr-2 h-4 w-4 animate-spin" />Verifying...</> : `${isValid ? "Verified" : 'Verify'}`}</Button>
+                                        <Button className='col-span-2 bg-blue-800' disabled={isValid || isPending} onClick={() => handleEmailValidation()}>{isPending ? <><AiOutlineLoading3Quarters className="mr-2 h-4 w-4 animate-spin" />Verifying...</> : `${isValid ? "Verified" : 'Verify'}`}</Button>
                                     </div>
                                     <Input type="text" placeholder="Your Name" onChange={(e) => setName(e.target.value)} className='border col-span-4 dark:border-zinc-200 border-zinc-950  ' />
 
                                 </div>
-                                <div className='px-4 mt-2 dark:bg-zinc-900 bg-zinc-200'>
+                                <div className='px-4 mt-2 bg-zinc-200'>
                                     <SignatureCanvas onSave={handleSaveSignature} />
 
                                 </div>
                                 <div key='close' className='flex justify-between px-4 py-3'>
 
                                     <Button
-                                        className='w-full'
+                                        className='w-full bg-blue-800'
                                         type='button'
                                         disabled={isLoading || !signature || !isValid || !message || !name}
                                         onClick={() => {

@@ -67,6 +67,4 @@
     @apply bg-background text-foreground;
   }
 }
-.dark {
-  background-color: black;
-}
+

@@ -72,19 +72,19 @@ const BlogPageClient = ({ post, html, blocks }: BlogPageClientProps) => {
       initial="hidden"
       animate="visible"
       variants={containerVariants}
-      className="w-full min-h-[60vh] flex flex-col leading-tight dark:text-white text-black"
+      className="w-full min-h-[60vh] flex flex-col leading-tight text-black"
     >
       <Link
         className="flex hover:underline items-center gap-1 mb-3"
         href={"/writings"}
       >
         <IoIosArrowBack size={20} />
-        Back to all writings
+        back to all writings
       </Link>
 
       <header className="mb-3 leading-none">
         <MotionHeader variants={childVariants}>
-          <h1 className="text-2xl leading-none font-bold">{title}</h1>
+          <h1 className="text-3xl font-instrumentSerif text-blue-800 italic leading-none font-bold">{title}</h1>
         </MotionHeader>
 
         <MotionHeader variants={childVariants}>
@@ -96,7 +96,7 @@ const BlogPageClient = ({ post, html, blocks }: BlogPageClientProps) => {
 
       <MotionHeader variants={childVariants}>
         <article
-          className="prose dark:prose-invert prose-a:text-blue-600 text-black dark:text-white leading-tight mt-3"
+          className="prose text-sm prose-a:text-blue-600 text-black leading-tight mt-3"
           dangerouslySetInnerHTML={{ __html: html }}
         />
         

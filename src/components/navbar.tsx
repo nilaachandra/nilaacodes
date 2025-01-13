@@ -1,9 +1,8 @@
 "use client";
-import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Link } from "next-view-transitions";
+import Emoji from "./Emoji";
 
 const navLinks = [
   { linkName: "about", href: "/about" },
@@ -12,11 +11,7 @@ const navLinks = [
 ];
 
 const Navbar = () => {
-  const [mounted, setMounted] = useState(false);
   const pathname = usePathname() || "/";
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   return (
     <>
@@ -24,19 +19,16 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           <Link
             href={"/"}
-            className="h-8 w-8 p-0.5 border-2 justify-center bg-blue-700 dark:bg-white flex items-center dark:border-white rounded-md"
+            className="h-8 w-8 p-0.5 border-2 justify-center bg-blue-700 flex items-cente rounded-md"
           >
-            {mounted && (
-              <Image
-                src="/nilaacodes-light.png"
-                width={30}
-                height={30}
-                alt="Nilaacodes"
-                className="dark:invert"
-              />
-            )}
+            <Image
+              src="/nilaacodes-light.png"
+              width={30}
+              height={30}
+              alt="Nilaacodes"
+            />
           </Link>
-          <div>
+          <div className="flex">
             {navLinks.map(({ linkName, href }, index) => (
               <Link
                 key={href}
@@ -44,13 +36,14 @@ const Navbar = () => {
                 data-id={href}
                 className={`inline-flex items-center justify-center text-center px-2 ${
                   pathname === href
-                    ? "text-zinc-800 dark:text-zinc-50 underline"
+                    ? "text-zinc-800 underline"
                     : "text-zinc-500"
                 }`}
               >
                 {linkName}
               </Link>
             ))}
+            <Emoji />
           </div>
         </div>
       </header>
