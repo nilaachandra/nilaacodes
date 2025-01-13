@@ -12,7 +12,7 @@ const Footer = () => {
           <LuCalendarDays />
           <DateTime formatString="MMMM d, yyyy HH:mm:ss" />
         </div>
-        <p className="text-sm">&copy;2024 Nilaacodes</p>
+        <p className="text-xs">&copy;2024 Nilaacodes</p>
       </div>
     </footer>
   );

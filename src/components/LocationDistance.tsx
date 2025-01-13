@@ -56,12 +56,12 @@ const LocationDistance: React.FC = () => {
 
   // Render loading message if distance is still being calculated
   if (distance === null) {
-    return <h1 className=" text-zinc-800">Calculating.....</h1>;
+    return <h1 className=" text-zinc-800 text-xs">Calculating.....</h1>;
   }
 
   // Render the calculated distance
   return (
-    <h1 className=" italic text-sm text-zinc-800">
+    <h1 className=" italic text-xs text-zinc-800">
       {distance.toFixed(2)} km away!
     </h1>
   );
