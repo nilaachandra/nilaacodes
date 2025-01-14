@@ -11,11 +11,15 @@ const DateTime: React.FC<DateTimeProps> = ({ formatString = "MMMM d, yyyy" }) =>
   const [currentDateTime, setCurrentDateTime] = useState<string>("");
 
   useEffect(() => {
-    const interval = setInterval(() => {
+    const updateDateTime = () => {
       const now = new Date();
-      const formattedDateTime = format(now, formatString, { locale: enIN });
-      setCurrentDateTime(formattedDateTime);
-    }, 1000);
+      const formattedDate = format(now, formatString, { locale: enIN });
+      const ampm = format(now, 'a');
+      setCurrentDateTime(`${formattedDate} ${ampm}`);
+    };
+
+    updateDateTime(); // Initial update
+    const interval = setInterval(updateDateTime, 1000);
 
     return () => {
       clearInterval(interval);

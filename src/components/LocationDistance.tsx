@@ -61,7 +61,7 @@ const LocationDistance: React.FC = () => {
 
   // Render the calculated distance
   return (
-    <h1 className=" italic text-xs text-zinc-800">
+    <h1 className="text-xs text-zinc-800">
       {distance.toFixed(2)} km away!
     </h1>
   );

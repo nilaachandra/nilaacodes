@@ -1,7 +1,5 @@
 "use client";
-import { ReactNode } from "react";
 import { LuGithub } from "react-icons/lu";
-import Status from "./Status";
 import {
   Card,
   CardContent,
@@ -13,7 +11,7 @@ import { FiArrowUpRight } from "react-icons/fi";
 import { Link } from "next-view-transitions";
 
 interface CardProps {
-  children?: ReactNode;
+  children?: React.ReactNode;
   image?: string;
   title?: string;
   description?: string;

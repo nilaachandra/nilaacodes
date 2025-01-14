@@ -1,7 +1,6 @@
 import React from "react";
 import DateTime from "./DateTime";
 import MyLocation from "./MyLocation";
-import { LuCalendarDays } from "react-icons/lu";
 
 const Footer = () => {
   return (
@@ -9,10 +8,9 @@ const Footer = () => {
       <MyLocation />
       <div className="flex justify-between">
         <div className="flex items-center gap-1">
-          <LuCalendarDays />
-          <DateTime formatString="MMMM d, yyyy HH:mm:ss" />
+          <DateTime formatString="MMMM d, yyyy HH:mm"  />
         </div>
-        <p className="text-xs">&copy;2024 Nilaacodes</p>
+        <p className="text-xs">&copy;2024 nilaacodes</p>
       </div>
     </footer>
   );
