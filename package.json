@@ -6,9 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "test": "jest",
-    "test:watch": "jest --watchAll"
+    "lint": "next lint"  
   },
   "dependencies": {
     "@notion-render/bookmark-plugin": "^0.0.2",
