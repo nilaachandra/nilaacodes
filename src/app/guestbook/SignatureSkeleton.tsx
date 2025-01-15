@@ -7,7 +7,7 @@ const SignatureSkeleton = () => {
             <ul className="grid grid-cols-2 gap-3 w-full mt-3">
                 {[1, 2, 3, 4, 5, 6].map((item, index) => (
                     <li key={index} className="flex col-span-2 lg:col-span-1 w-full">
-                        <div className="rounded-lg w-full flex flex-col leading-none justify-between h-full bg-zinc-300 dark:bg-zinc-800 p-4">
+                        <div className="rounded-lg w-full flex flex-col leading-none justify-between h-full bg-zinc-300 p-4">
                             <Skeleton className='h-3 w-64 mb-1' />
                             <Skeleton className='h-3 w-28' />
                             <div className="flex items-center justify-between">

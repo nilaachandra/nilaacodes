@@ -27,12 +27,12 @@ const Guestbook = () => {
             words for me along with your signature. It isn&apos;t neccessary to
             sign but just draw something cute :)
           </p>
-          <SignButton />
         </MotionDiv>
         <MotionDiv variants={childVariants} className="">
           <h1 className="text-3xl italic font-instrumentSerif text-blue-800 font-bold mt-3">
             hall of signatures
           </h1>
+          <SignButton />
         </MotionDiv>
         <MotionDiv variants={childVariants} className="">
           <SignatureCard />

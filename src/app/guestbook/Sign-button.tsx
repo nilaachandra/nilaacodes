@@ -154,7 +154,7 @@ export default function SignButton() {
                                     Your Message
                                 </motion.span>
                                 <textarea
-                                    className='h-full w-full resize-none rounded-md bg-transparent px-4 lg:py-1 py-3 text-sm outline-none'
+                                    className='h-full w-full resize-none rounded-md bg-transparent px-4 lg:py-2 py-3 text-sm outline-none'
                                     autoFocus
                                     onChange={(e) => setMessage(e.target.value)}
                                 />
