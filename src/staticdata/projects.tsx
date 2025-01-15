@@ -1,4 +1,3 @@
-import Status from "@/components/Status";
 import { ReactNode } from "react";
 
 interface Project {
