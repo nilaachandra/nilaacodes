@@ -16,7 +16,7 @@ const About = () => {
           </h1>
           <p className="tracking-normal leading-5 mt-3 text-sm">
             hey there! i&apos;m Nila Chandra Laishram, but you can just call me
-            Nilaa like everyone else does. i&apos;m a full stack developer,
+            Nilaa like everyone else does. i&apos;m a frontend developer,
             freelancer, and ui designer🚀 with a love for building and shipping
             cool stuff. fun fact: i used to be a Geology student until
             programming caught my eye a year ago. So here i am, knee-deep in web
